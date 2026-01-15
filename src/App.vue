@@ -4,41 +4,29 @@
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-      <nav class="cursor-pointer ">
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/anime">Anime</RouterLink>
-        <RouterLink to="/otp">OTP</RouterLink>
-      </nav>
-    </div>
-  </header>
+  <div class="w-full bg-gray-300 shadow-md text-center ">
+    <nav class="w-full flex flex-row justify-center gap-3 py-3 cursor-pointer ">
+      <RouterLink to="/" class="text-black font-normal">Home</RouterLink>
+      <RouterLink to="/about" class="text-black font-normal">About</RouterLink>
+      <RouterLink to="/anime" class="text-black font-normal">Anime</RouterLink>
+      <RouterLink to="/otp" class="text-black font-normal">OTP</RouterLink>
+    </nav>
+  </div>
+  <div class="p-3 flex flex-col gap-3 ">
+    <HelloWorld msg="You did it!" />
+    <RouterView />
+  </div>
 
-  <RouterView />
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
 nav {
-  width: 100%;
   font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
 }
 
 nav a.router-link-exact-active {
-  color: var(--color-text);
+  font-weight: bold;
+  color: #42b883;
 }
 
 nav a.router-link-exact-active:hover {
@@ -53,32 +41,5 @@ nav a {
 
 nav a:first-of-type {
   border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
 }
 </style>
