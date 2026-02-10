@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
+import { signInWithGoogle } from '@/services/google'
 
 const form = ref({
   username: '',
@@ -11,16 +12,28 @@ const form = ref({
 const onLogin = () => {
   console.log(form.value)
 }
+
+const useGoogleLogin = async () => await signInWithGoogle()
+
+const useFacebookLogin = () => {
+  console.log('Facebook login')
+}
+
+const useAppleLogin = () => {
+  console.log('Apple login')
+}
+
 </script>
 
 <template>
+
   <div class="w-full h-full flex flex-row justify-center items-center">
-    <div class="h-full flex-1 bg-blue-300">
+    <div class="h-full flex-1 ">
       <div class="w-full h-full flex flex-col justify-center items-center">
-        <img src="" alt="" />
+        <img src="../assets/login.jpg" alt="login" width="600" height="600"/>
       </div>
     </div>
-    <div class="h-full flex-1 bg-white">
+    <div class="h-full flex-1 bg-blue-300 ">
       <div class="h-full flex flex-col gap-3 justify-center items-center">
         <div class="w-[60%] flex flex-col gap-3 p-3">
           <h1 class="text-2xl font-bold text-center">Form Login</h1>
@@ -41,39 +54,45 @@ const onLogin = () => {
             />
             <Button
               type="Submit"
-              class="w-full bg-blue-500 rounded-md p-3 text-white hover:bg-blue-400"
+              class="w-full bg-blue-500 rounded-md p-3 text-white hover:bg-blue-400 mt-3 "
             >
               Login
             </Button>
           </form>
           <div class="flex flex-row justify-center gap-1">
-            <h5 class="text-center text-normal text-gray-500">Don't have an account?</h5>
-            <RouterLink to="/register" class="text-center text-blue-500 hover:underline">
+            <h5 class="text-center text-normal">Don't have an account?</h5>
+            <RouterLink to="/register" class="text-center text-blue-700 hover:underline">
               Register
             </RouterLink>
           </div>
           <div class="flex flex-row justify-center gap-4 cursor-pointer">
-            <img
-              src="../assets/google.png"
-              alt="google"
-              width="25px"
-              height="25px"
-              class="object-contain"
-            />
-            <img
-              src="../assets/facebook.png"
-              alt="facebook"
-              width="25px"
-              height="25px"
-              class="object-contain"
-            />
-            <img
-              src="../assets/apple.png"
-              alt="apple"
-              width="20px"
-              height="20px"
-              class="object-contain"
-            />
+            <div class="cursor-pointer" @click="useGoogleLogin()">
+              <img
+                src="../assets/google.png"
+                alt="google"
+                width="25px"
+                height="25px"
+                class="object-contain"
+              />
+            </div>
+            <div class="cursor-pointer" @click="useFacebookLogin()">
+              <img
+                src="../assets/facebook.png"
+                alt="facebook"
+                width="25px"
+                height="25px"
+                class="object-contain"
+              />
+            </div>
+            <div class="cursor-pointer" @click="useAppleLogin()">
+              <img
+                src="../assets/apple.png"
+                alt="apple"
+                width="20px"
+                height="20px"
+                class="object-contain"
+              />
+            </div>
           </div>
         </div>
       </div>
