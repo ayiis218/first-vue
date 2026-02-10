@@ -2,12 +2,21 @@
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import { signInWithGoogle } from '@/services/google'
+import { EyeIcon, EyeSlashIcon } from '@heroicons/vue/24/outline'
 
 const form = ref({
   username: '',
   email: '',
   password: '',
 })
+
+const show = ref({
+  password: false,
+})
+
+const isShow = (field: keyof typeof show.value) => {
+  show.value[field] = !show.value[field]
+}
 
 const onLogin = () => {
   console.log(form.value)
@@ -45,13 +54,19 @@ const useAppleLogin = () => {
               class="w-full border border-gray-300 p-3 rounded-md"
               required
             />
-            <Input
-              type="password"
-              placeholder="Password"
-              v-model="form.password"
-              class="w-full border border-gray-300 p-3 rounded-md"
-              required
-            />
+             <div class="w-full flex items-center bg-white gap-3 border border-gray-300 p-3 rounded-md">
+              <Input
+                :type="show.password ? 'text' : 'password'"
+                placeholder="Password"
+                v-model="form.password"
+                class="bg-transparent outline-none flex-1"
+                required
+              />
+              <span class="cursor-pointer" @click="isShow('password')">
+                  <EyeIcon v-if="!show.password" class="w-5 h-5"/>
+                  <EyeSlashIcon v-else class="w-5 h-5"/>
+              </span>
+            </div>
             <Button
               type="Submit"
               class="w-full bg-blue-500 rounded-md p-3 text-white hover:bg-blue-400 mt-3 "

@@ -19,7 +19,7 @@ import { RouterView } from 'vue-router'
       </RouterLink>
       <RouterLink
         to="/register"
-        class="w-[80px] text-sm text-black font-normal border bg-white border-blue-500 p-2 hover:bg-blue-400 rounded-md text-center"
+        class="w-[80px] text-sm text-blue-500 font-normal border bg-white border-2 border-blue-500 p-2 hover:bg-blue-100 rounded-md text-center"
       >
         Register
       </RouterLink>
@@ -32,7 +32,7 @@ import { RouterView } from 'vue-router'
 
 <style>
 nav {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 nav a.router-link-exact-active {
