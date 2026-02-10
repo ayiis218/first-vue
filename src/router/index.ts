@@ -20,8 +20,11 @@ const router = createRouter({
         { path: '/about', name: 'about', component: AboutView },
         { path: '/anime', name: 'anime', component: AnimeView },
         { path: '/otp', name: 'otp', component: OtpView },
-        { path: '/profile', name: 'profile', component: ProfileView },
       ],
+    },
+    {
+      path: '/profile',
+      component: ProfileView,
     },
     {
       path: '/auth',
