@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import { signInWithGoogle } from '@/services/google'
 import { EyeIcon, EyeSlashIcon } from '@heroicons/vue/24/outline'
+import { API_Login } from '@/services/auth'
 
 const form = ref({
   username: '',
@@ -18,8 +19,13 @@ const isShow = (field: keyof typeof show.value) => {
   show.value[field] = !show.value[field]
 }
 
-const onLogin = () => {
-  console.log(form.value)
+const onLogin = async () => {
+  const result = await API_Login(form.value)
+  if (result.status === 200) {
+    window.location.href = "/dashboard"
+  }else {
+    console.log("Login failed")
+  }
 }
 
 const useGoogleLogin = async () => await signInWithGoogle()
@@ -68,7 +74,7 @@ const useAppleLogin = () => {
               </span>
             </div>
             <Button
-              type="Submit"
+              type="submit"
               class="w-full bg-blue-500 rounded-md p-3 text-white hover:bg-blue-400 mt-3 "
             >
               Login
