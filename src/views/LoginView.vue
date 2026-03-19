@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
-import { signInWithGoogle } from '@/services/google'
+// import { signInWithGoogle } from '@/services/google'
 import { EyeIcon, EyeSlashIcon } from '@heroicons/vue/24/outline'
 import { API_Login } from '@/services/auth'
 

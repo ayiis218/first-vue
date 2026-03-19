@@ -16,7 +16,7 @@ const resendOtp = async () => {
          code_length: 4
       }
       if (!payload )return
-      await API_SendOTP(payload)
+      // await API_SendOTP(payload)
    }
 
 const handleOtp = (value: number) => {
