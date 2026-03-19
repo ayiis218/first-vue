@@ -33,7 +33,7 @@ const session = false
       </RouterLink>
     </div>
   </div>
-  <div class="w-full p-3">
+  <div class="h-full bg-[#DEFCF9]">
     <RouterView />
   </div>
 </template>

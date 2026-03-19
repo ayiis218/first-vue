@@ -25,6 +25,7 @@
     "@heroicons/vue": "^2.2.0",
     "firebase": "^12.9.0",
     "js-cookie": "^3.0.5",
+    "motion-v": "^2.0.1",
     "pinia": "^3.0.4",
     "vue": "^3.5.26",
     "vue-router": "^4.6.4"
