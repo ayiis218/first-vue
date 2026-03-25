@@ -1,5 +1,10 @@
 <script lang="ts" setup>
 import { motion } from 'motion-v';
+import { ref } from 'vue';
+import { SuArrowUpCircle, ThAlignJustify, SuClose } from '@kalimahapps/vue-icons';
+
+const isNavOpen = ref(false);
+const isMobile = ref(false);
 
 const fadeInUp: any = {
   initial: { opacity: 0, y: 30 },
@@ -23,29 +28,59 @@ const scrollToTop = () => {
     behavior: "smooth"
   });
 };
+
+const onScrollTo = (id:string)=> {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({
+      behavior: "smooth"
+    });
+  }
+  isNavOpen.value = false;
+}
+
+const openNav = () => {
+  isNavOpen.value = !isNavOpen.value;
+}
+
 </script>
 
 <template>
   <div class="min-h-screen bg-slate-950 text-slate-200 selection:bg-indigo-500/30 font-sans pb-12">
-    <nav class="sticky top-0 py-3 bg-slate-950/80 backdrop-blur-md">
-      <div class="max-w-4xl mx-auto px-6 sm:px-10 flex justify-between items-center">
-        <div class="flex items-center gap-2">
-          <div class="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center">
-            <span class="text-white font-bold">A</span>
-          </div>
-          <span class="text-white font-bold">Ayi Solahudin</span>
-        </div>
+    <div v-if="isMobile" class="sticky top-8 flex flex-row justify-end pr-8 z-50">
+      <button @click="openNav">
+        <ThAlignJustify class="w-18 h-18"/>
+      </button>
+    </div>  
+    <nav v-if="!isMobile" class="sticky top-0 py-3 w-full bg-slate-750/80 backdrop-blur-md z-50">
+      <div class="max-w-4xl mx-auto px-6 sm:px-10 flex justify-center items-center">
         <div class="flex items-center gap-4">
-          <a href="#profile" class="text-slate-400 hover:text-white transition-colors duration-300">Profile</a>
-          <a href="#experience" class="text-slate-400 hover:text-white transition-colors duration-300">Experience</a>
-          <a href="#education" class="text-slate-400 hover:text-white transition-colors duration-300">Education</a>
-          <a href="#sertifikat" class="text-slate-400 hover:text-white transition-colors duration-300">Sertifikat</a>
-          <a href="#technical-skills" class="text-slate-400 hover:text-white transition-colors duration-300">Technical Skills</a>
-          <a href="#project" class="text-slate-400 hover:text-white transition-colors duration-300">Project</a>
-          <a href="#contact" class="text-slate-400 hover:text-white transition-colors duration-300">Contact</a>
+          <button @click="onScrollTo('profile')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Profile</button>
+          <button @click="onScrollTo('experience')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Experience</button>
+          <button @click="onScrollTo('education')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Education</button>
+          <button @click="onScrollTo('sertifikat')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Sertifikat</button>
+          <button @click="onScrollTo('technical-skills')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Technical Skills</button>
+          <button @click="onScrollTo('project')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Project</button>
+          <button @click="onScrollTo('contact')" class="text-slate-400 hover:text-white transition-colors duration-300">Contact</button>
         </div>
       </div>
     </nav>
+    <div v-if="isNavOpen" class="absolute top-0 right-0 w-full h-full bg-slate-950 z-50 flex flex-col p-4">
+      <div class="flex flex-row justify-end w-full bg-red-30">
+        <button @click="openNav">
+          <SuClose class="w-12 h-12"/>
+        </button>
+      </div>
+      <div class="flex flex-col">
+        <button @click="onScrollTo('profile')">Profile</button>
+        <button @click="onScrollTo('experience')">Experience</button>
+        <button @click="onScrollTo('education')">Education</button>
+        <button @click="onScrollTo('sertifikat')">Sertifikat</button>
+        <button @click="onScrollTo('technical-skills')">Technical Skills</button>
+        <button @click="onScrollTo('project')">Project</button>
+        <button @click="onScrollTo('contact')">Contact</button>
+      </div>
+    </div>
 
     <!-- Header / Hero Section -->
     <motion.header
@@ -210,11 +245,13 @@ const scrollToTop = () => {
           <div class="group relative p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-purple-500/30 hover:bg-slate-900 transition-all duration-300">
              <div class="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-indigo-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
              <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-4">
-              <h4 class="text-lg font-semibold text-slate-100">Pijar Camp</h4>
+              <div>
+                <h4 class="text-lg font-semibold text-slate-100">Pijar Camp</h4>
+                <p class="text-indigo-400 text-sm font-medium">Fullstack Developer</p>
+              </div>
               <span class="text-xs font-medium text-slate-500 bg-slate-800/80 px-3 py-1 rounded-full whitespace-nowrap">May '22 - Aug '24</span>
             </div>
             <div class="space-y-4 text-slate-400 text-sm leading-relaxed relative z-10">
-              <p class="text-indigo-400 text-sm font-medium">Fullstack Developer</p>
               <ul class="list-disc pl-4 space-y-1 marker:text-slate-600">
                 <li>Learned essential skills of a Web Developer including 
                   <span class="text-slate-200 font-bold">
@@ -230,11 +267,13 @@ const scrollToTop = () => {
           <div class="group relative p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-purple-500/30 hover:bg-slate-900 transition-all duration-300">
             <div class="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-indigo-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
              <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-4">
-              <h4 class="text-lg font-semibold text-slate-100">State Vocational School 1 Kawali</h4>
+              <div>
+                <h4 class="text-lg font-semibold text-slate-100">State Vocational School 1 Kawali</h4>
+                <p class="text-indigo-400 text-sm font-medium">Software Engineering</p>
+              </div>
               <span class="text-xs font-medium text-slate-500 bg-slate-800/80 px-3 py-1 rounded-full whitespace-nowrap">Jul '16 - May '19</span>
             </div>
             <div class="space-y-4 text-slate-400 text-sm leading-relaxed relative z-10">
-              <p class="text-indigo-400 text-sm font-medium">Software Engineering</p>
               <ul class="list-disc pl-4 space-y-1 marker:text-slate-600">
                 <li>Studied software engineering fundamentals: 
                   <span class="text-slate-200 font-bold">
@@ -348,15 +387,6 @@ const scrollToTop = () => {
 
     </motion.main>
 
-    <div class="sticky bottom-5 right-4">
-      <button 
-        @click="scrollToTop"
-        class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors duration-300"
-      >
-        <i class="fas fa-arrow-up"></i>
-      </button>
-    </div>
-
     <!-- Footer -->
     <motion.footer
       :initial="{ opacity: 0 }"
@@ -369,5 +399,11 @@ const scrollToTop = () => {
         </p>
       </div>
     </motion.footer>
+
+    <div class="sticky bottom-10 flex flex-row justify-end pr-10">
+      <button @click="scrollToTop" class="cursor-pointer">
+        <SuArrowUpCircle class="w-10 h-10 text-white"/>
+      </button>
+    </div>
   </div>
 </template> 
