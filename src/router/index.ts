@@ -13,23 +13,20 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: '/',
-      component: MainLayout,
+      path: '/auth',
+      component: MainView,
       children: [
-        { path: '/', name: 'home', component: MainView },
+        { path: '/profile', name: 'profile', component: ProfileView },
         { path: '/about', name: 'about', component: AboutView },
         { path: '/anime', name: 'anime', component: AnimeView },
         { path: '/otp', name: 'otp', component: OtpView },
       ],
     },
     {
-      path: '/profile',
-      component: ProfileView,
-    },
-    {
-      path: '/auth',
+      path: '/',
       component: AuthLayout,
       children: [
+        { path: '/', name: 'home', component: MainView },
         { path: '/login', name: 'login', component: LoginView },
         { path: '/register', name: 'register', component: RegisterView },
       ],
