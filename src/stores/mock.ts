@@ -6,22 +6,43 @@ export const dataExperience = [
     experience: [
       {
         title: "APP Division",
-        subTitle: "Loyalty Management System",
-        list: [
-          "Developed enterprise web application using <b class='text-slate-200'>Next.js, Radix UI, TanStack React Query, and Zustand</b>.",
-          "Built responsive UI with analytics charts",
-          "Integrated BRISTARS Mobile",
-          "Applied ElasticSearch APM for monitoring."
+        project: [
+          {
+            title: "Loyalty Management System",
+            list: [
+              "Developed enterprise web application using <b class='text-slate-200'>Next.js, Radix UI, TanStack React Query, and Zustand</b>."
+            ]
+          },
+          {
+            title: "ProCash",
+            list: [
+              "Developed enterprise web application using <b class='text-slate-200'>Laravel</b>.",
+              ""
+            ]
+          },
+          {
+            title: "Ambilin (Cash Pickup Management)",
+            list: [
+              "Developed enterprise web application using <b class='text-slate-200'>Next.js and Tailwind CSS</b>.",
+              "Manage and monitor cash pickup transactions",
+              ""
+            ]
+          }
         ]
+
       },
       {
         title: "DDB Division",
-        subTitle: "BRISilk (Shortlink URL)",
-        list: [
-          "Developed shortlink management Web Application using <b class='text-slate-200'>Next Js, Material UI and React Query</b>.",
-          "Built responsive UI with analytics charts",
-          "Integrated BRISTARS Mobile",
-          "Applied ElasticSearch APM for monitoring."
+        project: [
+          {
+            title: "BRISilk (Shortlink URL)",
+            list: [
+              "Developed shortlink management Web Application using <b class='text-slate-200'>Next Js, Material UI and React Query</b>.",
+              "Built responsive UI with analytics charts",
+              "Integrated BRISTARS Mobile",
+              "Applied ElasticSearch APM for monitoring."
+            ]
+          }
         ]
       }
     ]
@@ -32,13 +53,14 @@ export const dataExperience = [
     date: "Apr '23 - Present",
     experience: [
       {
-        title: "APP Division",
-        subTitle: "Loyalty Management System",
-        list: [
-          "Developed enterprise web application using Next.js, Radix UI, TanStack React Query, and Zustand.",
-          "Built responsive UI with analytics charts",
-          "Integrated BRISTARS Mobile",
-          "Applied ElasticSearch APM for monitoring."
+        project: [
+          {
+            title: "CEISA 4.0",
+            list: [
+              "Developed enterprise web application using <b class='text-slate-200'>React Js, Ant Design, Hightchart, and ElasticSearch</b>.",
+              ""
+            ]
+          }
         ]
       }
     ]

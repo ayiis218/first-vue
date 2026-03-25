@@ -1,8 +1,10 @@
 <script setup lang="ts">
 defineProps<{
   title?: string;
-  subTitle?: string;
-  list: string[];
+  project: {
+    title: string;
+    list: string[];
+  }[]
 }>()
 </script>
 
@@ -13,10 +15,19 @@ defineProps<{
       {{ title }}
     </h5>
     <div class="pl-5 border-l border-slate-700/50 space-y-4 ml-0.5">
-      <div class="space-y-1.5">
-        <h6 v-if="subTitle" class="text-slate-200 font-medium text-[15px]">{{ subTitle }}</h6>
+      <div 
+        class="space-y-1.5" 
+        v-for="(item, index) in project" 
+        :key="index"
+      >
+        <h6 v-if="item.title" class="text-slate-200 font-medium text-[15px]">{{ item.title }}</h6>
         <ul class="list-disc pl-4 space-y-1 marker:text-slate-600">
-          <li v-for="(item, index) in list" :key="index" v-html="item"></li>
+          <li 
+            class="text-slate-400 text-sm leading-relaxed"
+            v-for="(list, index) in item.list" 
+            :key="index" 
+            v-html="list"
+          ></li>
         </ul>
       </div>
     </div>

@@ -26,8 +26,7 @@ defineProps<{
         v-for="(item, index) in experience"
         :key="index"
         :title="item.title"
-        :subTitle="item.subTitle"
-        :list="item.list"
+        :project="item.project"
       />
     </div>
   </div>
