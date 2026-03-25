@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.2.0",
+    "@kalimahapps/vue-icons": "^1.9.5",
     "firebase": "^12.9.0",
     "js-cookie": "^3.0.5",
     "motion-v": "^2.0.1",
