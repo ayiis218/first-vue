@@ -16,15 +16,43 @@ const staggerContainer: any = {
     }
   }
 };
+
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+};
 </script>
 
 <template>
   <div class="min-h-screen bg-slate-950 text-slate-200 selection:bg-indigo-500/30 font-sans pb-12">
+    <nav class="sticky top-0 py-3 bg-slate-950/80 backdrop-blur-md">
+      <div class="max-w-4xl mx-auto px-6 sm:px-10 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center">
+            <span class="text-white font-bold">A</span>
+          </div>
+          <span class="text-white font-bold">Ayi Solahudin</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="#profile" class="text-slate-400 hover:text-white transition-colors duration-300">Profile</a>
+          <a href="#experience" class="text-slate-400 hover:text-white transition-colors duration-300">Experience</a>
+          <a href="#education" class="text-slate-400 hover:text-white transition-colors duration-300">Education</a>
+          <a href="#sertifikat" class="text-slate-400 hover:text-white transition-colors duration-300">Sertifikat</a>
+          <a href="#technical-skills" class="text-slate-400 hover:text-white transition-colors duration-300">Technical Skills</a>
+          <a href="#project" class="text-slate-400 hover:text-white transition-colors duration-300">Project</a>
+          <a href="#contact" class="text-slate-400 hover:text-white transition-colors duration-300">Contact</a>
+        </div>
+      </div>
+    </nav>
+
     <!-- Header / Hero Section -->
     <motion.header
       :initial="fadeInUp.initial"
       :animate="fadeInUp.enter"
       class="max-w-4xl mx-auto pt-24 pb-16 px-6 sm:px-10 flex flex-col md:flex-row items-center gap-10"
+      id="profile"
     >
       <div class="relative group">
         <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
@@ -55,7 +83,11 @@ const staggerContainer: any = {
     >
       
       <!-- Experience Section -->
-      <motion.section :variants="fadeInUp" class="space-y-6">
+      <motion.section 
+        :variants="fadeInUp" 
+        class="space-y-6"
+        id="experience"
+      >
         <div class="flex items-center gap-4">
           <h3 class="text-2xl font-bold text-white tracking-wide">Experience</h3>
           <div class="flex-1 h-px bg-slate-800"></div>
@@ -67,7 +99,7 @@ const staggerContainer: any = {
             <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
               <div>
                 <h4 class="text-lg font-semibold text-slate-100">PT Bank Rakyat Indonesia (Persero) Tbk</h4>
-                <p class="text-indigo-400 text-sm font-medium mt-1">Frontend Developer</p>
+                <p class="text-indigo-400 text-sm font-medium">Frontend Developer</p>
               </div>
               <span class="text-xs font-medium text-slate-500 bg-slate-800/80 px-3 py-1 rounded-full whitespace-nowrap">Apr '23 - Present</span>
             </div>
@@ -144,7 +176,7 @@ const staggerContainer: any = {
             <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
               <div>
                 <h4 class="text-lg font-semibold text-slate-100">Direktorat Jenderal Bea dan Cukai Kemenkeu RI</h4>
-                <p class="text-indigo-400 text-sm font-medium mt-1">Frontend Developer</p>
+                <p class="text-indigo-400 text-sm font-medium">Frontend Developer</p>
               </div>
               <span class="text-xs font-medium text-slate-500 bg-slate-800/80 px-3 py-1 rounded-full whitespace-nowrap">Oct '22 - Jan '23</span>
             </div>
@@ -164,7 +196,11 @@ const staggerContainer: any = {
       </motion.section>
 
       <!-- Education Section -->
-      <motion.section :variants="fadeInUp" class="space-y-6">
+      <motion.section 
+        :variants="fadeInUp" 
+        class="space-y-6"
+        id="education"
+      >
         <div class="flex items-center gap-4">
           <h3 class="text-2xl font-bold text-white tracking-wide">Education</h3>
           <div class="flex-1 h-px bg-slate-800"></div>
@@ -177,21 +213,49 @@ const staggerContainer: any = {
               <h4 class="text-lg font-semibold text-slate-100">Pijar Camp</h4>
               <span class="text-xs font-medium text-slate-500 bg-slate-800/80 px-3 py-1 rounded-full whitespace-nowrap">May '22 - Aug '24</span>
             </div>
+            <div class="space-y-4 text-slate-400 text-sm leading-relaxed relative z-10">
+              <p class="text-indigo-400 text-sm font-medium">Fullstack Developer</p>
+              <ul class="list-disc pl-4 space-y-1 marker:text-slate-600">
+                <li>Learned essential skills of a Web Developer including 
+                  <span class="text-slate-200 font-bold">
+                    Algorithms, Node.js, Express.js, React.js, Next.js, Bootstrap, Postman, GitHub, and PostgreSQL.
+                  </span>
+                </li>
+                <li>Deployed multiple web applications applying production-ready engineering practices</li>
+                <li>Developed soft skills such as growth mindset, stress management, self-management, and time management</li>
+              </ul>
+            </div>
           </div>
 
           <div class="group relative p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-purple-500/30 hover:bg-slate-900 transition-all duration-300">
             <div class="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-indigo-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
              <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-4">
-              <h4 class="text-lg font-semibold text-slate-100">Universitas Muhammadiyah Tasikmalaya</h4>
+              <h4 class="text-lg font-semibold text-slate-100">State Vocational School 1 Kawali</h4>
               <span class="text-xs font-medium text-slate-500 bg-slate-800/80 px-3 py-1 rounded-full whitespace-nowrap">Jul '16 - May '19</span>
+            </div>
+            <div class="space-y-4 text-slate-400 text-sm leading-relaxed relative z-10">
+              <p class="text-indigo-400 text-sm font-medium">Software Engineering</p>
+              <ul class="list-disc pl-4 space-y-1 marker:text-slate-600">
+                <li>Studied software engineering fundamentals: 
+                  <span class="text-slate-200 font-bold">
+                    HTML, CSS, Java, PHP, .NET, MySQL, and Algorithms.
+                  </span>
+                </li>
+                <li>Collaborated in team-based software projects with structured task distribution and integration</li>
+                <li>Participated in PKL (internship program) to gain real work experience.</li>
+              </ul>
             </div>
           </div>
         </div>
       </motion.section>
 
-      <motion.section :variants="fadeInUp" class="space-y-6">
+      <motion.section 
+        :variants="fadeInUp" 
+        class="space-y-6"
+        id="sertifikat"
+      >
         <div class="flex items-center gap-4">
-          <h3 class="text-2xl font-bold text-white tracking-wide">Sertifikasi</h3>
+          <h3 class="text-2xl font-bold text-white tracking-wide">Sertifikat</h3>
           <div class="flex-1 h-px bg-slate-800"></div>
         </div>
 
@@ -206,7 +270,11 @@ const staggerContainer: any = {
         </div>
       </motion.section>
 
-      <motion.section :variants="fadeInUp" class="space-y-6">
+      <motion.section 
+        :variants="fadeInUp" 
+        class="space-y-6"
+        id="technical-skills"
+      >
         <div class="flex items-center gap-4">
           <h3 class="text-2xl font-bold text-white tracking-wide">Technical Skills</h3>
           <div class="flex-1 h-px bg-slate-800"></div>
@@ -214,33 +282,80 @@ const staggerContainer: any = {
 
         <div class="grid gap-6">
           <div class="group relative p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-purple-500/30 hover:bg-slate-900 transition-all duration-300">
-            <div class="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-indigo-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-             <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-4">
-              <h4 class="text-lg font-semibold text-slate-100">Pijar Camp</h4>
-              <span class="text-xs font-medium text-slate-500 bg-slate-800/80 px-3 py-1 rounded-full whitespace-nowrap">May '22 - Aug '24</span>
+            <div class="flex justify-between">
+              <div>
+                <h5 class="text-lg font-semibold text-slate-100">Language</h5>
+                <ul class="list-disc pl-4 space-y-1 marker:text-slate-600">
+                  <li>JavaScript</li>
+                  <li>TypeScript</li>
+                  <li>PHP</li>
+                </ul>
+              </div>
+              <div>
+                <h5 class="text-lg font-semibold text-slate-100">Framework</h5>
+                <ul class="list-disc pl-4 space-y-1 marker:text-slate-600">
+                  <li>React Js</li>
+                  <li>Next Js</li>
+                  <li>Vue Js</li>
+                  <li>React Native</li>
+                  <li>Express.js</li>
+                  <li>Laravel</li>
+                </ul>
+              </div>
+              <div>
+                <h5 class="text-lg font-semibold text-slate-100">Database</h5>
+                <ul class="list-disc pl-4 space-y-1 marker:text-slate-600">
+                  <li>PostgreSQL</li>
+                  <li>MySQL</li>
+                </ul>
+              </div>
+              <div>
+                <h5 class="text-lg font-semibold text-slate-100">Tools/Other</h5>
+                <ul class="list-disc pl-4 space-y-1 marker:text-slate-600">
+                  <li>Github</li>
+                  <li>GitLab</li>
+                  <li>Bitbucket</li>
+                  <li>Postman</li>
+                  <li>Docker</li>
+                  <li>Kubernetes</li>
+                  <li>Jira</li>
+                  <li>Jenkins</li>
+                  <li>Agile/Scrum</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </motion.section>
 
-      <motion.section :variants="fadeInUp" class="space-y-6">
+      <motion.section 
+        :variants="fadeInUp" 
+        class="space-y-6"
+        id="project"
+      >
         <div class="flex items-center gap-4">
-          <h3 class="text-2xl font-bold text-white tracking-wide">Projects</h3>
+          <h3 class="text-2xl font-bold text-white tracking-wide">Project</h3>
           <div class="flex-1 h-px bg-slate-800"></div>
         </div>
 
         <div class="grid gap-6">
           <div class="group relative p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-purple-500/30 hover:bg-slate-900 transition-all duration-300">
             <div class="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-indigo-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-             <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-4">
-              <h4 class="text-lg font-semibold text-slate-100">Pijar Camp</h4>
-              <span class="text-xs font-medium text-slate-500 bg-slate-800/80 px-3 py-1 rounded-full whitespace-nowrap">May '22 - Aug '24</span>
-            </div>
+
           </div>
         </div>
       </motion.section>
 
     </motion.main>
+
+    <div class="sticky bottom-5 right-4">
+      <button 
+        @click="scrollToTop"
+        class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors duration-300"
+      >
+        <i class="fas fa-arrow-up"></i>
+      </button>
+    </div>
 
     <!-- Footer -->
     <motion.footer
@@ -250,7 +365,7 @@ const staggerContainer: any = {
     >
       <div class="pt-8 border-t border-slate-800 flex flex-col items-center gap-4">
         <p class="text-sm text-slate-500 font-light">
-          Built with Vue & Tailwind. Animated with motion-v.
+          Ayi Solahudin - Frontend Developer
         </p>
       </div>
     </motion.footer>
