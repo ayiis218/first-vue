@@ -1,10 +1,9 @@
 <script setup lang="ts">
+import type { IPropsProject } from '@/stores/type.mock';
+
 defineProps<{
   title?: string;
-  project: {
-    title: string;
-    list: string[];
-  }[]
+  project: IPropsProject[]
 }>()
 </script>
 

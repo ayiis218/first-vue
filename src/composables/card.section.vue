@@ -1,12 +1,13 @@
 <script setup lang="ts">
 
+import type { IPropsExperience } from "@/stores/type.mock";
 import CardSectionList from "./card.section.list.vue";
 
 defineProps<{
   companyName: string;
   position: string;
   date: string;
-  experience?: any;
+  experience?: IPropsExperience[];
 }>()
 </script>
 
