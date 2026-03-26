@@ -4,7 +4,7 @@ import ListItem from '@/composables/list.item.vue'
 import CardItem from '@/composables/card.item.vue'
 import { motion } from 'motion-v';
 import { ref } from 'vue';
-import { SuArrowUpCircle, ThAlignJustify, SuClose } from '@kalimahapps/vue-icons';
+import { SuArrowUpCircle, ThAlignJustify, SuClose, AkGithubFill, AkLinkedinBoxFill, AkInstagramFill, FeMail } from '@kalimahapps/vue-icons';
 import { dataExperience,dataEducation, techStack, dataProject } from '@/stores/mock';
 import { useScreenSize } from '@/helper/screen.size';
 
@@ -53,7 +53,7 @@ const openNav = () => {
 <template>
   <div class="min-h-screen bg-slate-950 text-slate-200 selection:bg-indigo-500/30 font-sans pb-12">
   
-    <div v-if="isMobile" class="sticky top-8 flex flex-row justify-end pr-8 z-50">
+    <div v-if="isMobile" class="flex flex-row justify-end pt-8 pr-8 z-50">
       <button @click="openNav">
         <ThAlignJustify class="w-18 h-18"/>
       </button>
@@ -240,12 +240,27 @@ const openNav = () => {
     <motion.footer
       :initial="{ opacity: 0 }"
       :animate="{ opacity: 1, transition: { delay: 0.8, duration: 1 } }"
-      class="max-w-4xl mx-auto px-6 sm:px-10 mt-20 text-center"
+      class="max-w-4xl flex flex-col gap-3 mx-auto px-6 sm:px-10 mt-20 text-center"
+      id="contact"
     >
       <div class="pt-8 border-t border-slate-800 flex flex-col items-center gap-4">
         <p class="text-sm text-slate-500 font-light">
           Ayi Solahudin - Frontend Developer
         </p>
+      </div>
+      <div class="flex flex-row gap-2 justify-center items-center">
+        <a href="https://github.com/ayiis218" target="_blank" rel="noopener noreferrer">
+          <AkGithubFill class="w-10 h-10"/>
+        </a>
+        <a href="https://www.linkedin.com/in/ayi-solahudin" target="_blank" rel="noopener noreferrer">
+          <AkLinkedinBoxFill class="w-10 h-10"/>
+        </a>
+        <a href="https://www.instagram.com/ayiis___" target="_blank" rel="noopener noreferrer">
+          <AkInstagramFill class="w-10 h-10"/>
+        </a>
+        <a href="mailto:[ayi.shallahudin@gmail.com]" target="_blank" rel="noopener noreferrer">
+          <FeMail class="w-10 h-10"/>
+        </a>
       </div>
     </motion.footer>
 
