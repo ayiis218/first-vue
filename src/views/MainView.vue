@@ -1,12 +1,15 @@
 <script lang="ts" setup>
 import CardSection from '@/composables/card.section.vue'
+import ListItem from '@/composables/list.item.vue'
+import CardItem from '@/composables/card.item.vue'
 import { motion } from 'motion-v';
 import { ref } from 'vue';
 import { SuArrowUpCircle, ThAlignJustify, SuClose } from '@kalimahapps/vue-icons';
-import { dataExperience,dataEducation } from '@/stores/mock';
+import { dataExperience,dataEducation, techStack, dataProject } from '@/stores/mock';
+import { useScreenSize } from '@/helper/screen.size';
 
+const { isMobile } = useScreenSize();
 const isNavOpen = ref(false);
-const isMobile = ref(false);
 
 const fadeInUp: any = {
   initial: { opacity: 0, y: 30 },
@@ -75,13 +78,13 @@ const openNav = () => {
         </button>
       </div>
       <div class="flex flex-col">
-        <button @click="onScrollTo('profile')">Profile</button>
-        <button @click="onScrollTo('experience')">Experience</button>
-        <button @click="onScrollTo('education')">Education</button>
-        <button @click="onScrollTo('sertifikat')">Sertifikat</button>
-        <button @click="onScrollTo('technical-skills')">Technical Skills</button>
-        <button @click="onScrollTo('project')">Project</button>
-        <button @click="onScrollTo('contact')">Contact</button>
+        <button @click="onScrollTo('profile')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Profile</button>
+        <button @click="onScrollTo('experience')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Experience</button>
+        <button @click="onScrollTo('education')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Education</button>
+        <button @click="onScrollTo('sertifikat')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Sertifikat</button>
+        <button @click="onScrollTo('technical-skills')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Technical Skills</button>
+        <button @click="onScrollTo('project')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Project</button>
+        <button @click="onScrollTo('contact')" class="text-slate-400 hover:text-white transition-colors duration-300">Contact</button>
       </div>
     </div>
 
@@ -193,46 +196,16 @@ const openNav = () => {
 
         <div class="grid gap-6">
           <div class="group relative p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-purple-500/30 hover:bg-slate-900 transition-all duration-300">
-            <div class="flex justify-between">
-              <div>
-                <h5 class="text-lg font-semibold text-slate-100">Language</h5>
-                <ul class="list-disc pl-4 space-y-1 marker:text-slate-600">
-                  <li>JavaScript</li>
-                  <li>TypeScript</li>
-                  <li>PHP</li>
-                </ul>
-              </div>
-              <div>
-                <h5 class="text-lg font-semibold text-slate-100">Framework</h5>
-                <ul class="list-disc pl-4 space-y-1 marker:text-slate-600">
-                  <li>React Js</li>
-                  <li>Next Js</li>
-                  <li>Vue Js</li>
-                  <li>React Native</li>
-                  <li>Express.js</li>
-                  <li>Laravel</li>
-                </ul>
-              </div>
-              <div>
-                <h5 class="text-lg font-semibold text-slate-100">Database</h5>
-                <ul class="list-disc pl-4 space-y-1 marker:text-slate-600">
-                  <li>PostgreSQL</li>
-                  <li>MySQL</li>
-                </ul>
-              </div>
-              <div>
-                <h5 class="text-lg font-semibold text-slate-100">Tools/Other</h5>
-                <ul class="list-disc pl-4 space-y-1 marker:text-slate-600">
-                  <li>Github</li>
-                  <li>GitLab</li>
-                  <li>Bitbucket</li>
-                  <li>Postman</li>
-                  <li>Docker</li>
-                  <li>Kubernetes</li>
-                  <li>Jira</li>
-                  <li>Jenkins</li>
-                  <li>Agile/Scrum</li>
-                </ul>
+            <div class="flex flex-col md:flex-row md:justify-between">
+              <div 
+                v-for="(item, index) in techStack" 
+                :key="index" 
+                class="flex-1"
+              >
+                <ListItem
+                  :title="item.title"
+                  :list="item.list"
+                />
               </div>
             </div>
           </div>
@@ -250,10 +223,14 @@ const openNav = () => {
         </div>
 
         <div class="grid gap-6">
-          <div class="group relative p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-purple-500/30 hover:bg-slate-900 transition-all duration-300">
-            <div class="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-indigo-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-
-          </div>
+          <CardItem 
+            v-for="(item, index) in dataProject"
+            :key="index"
+            :title="item.projectName"
+            :description="item.description"
+            :image="item.images"
+            :techStack="item.techStack"
+          />
         </div>
       </motion.section>
 
