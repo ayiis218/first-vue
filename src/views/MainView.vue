@@ -196,7 +196,7 @@ const openNav = () => {
 
         <div class="grid gap-6">
           <div class="group relative p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-purple-500/30 hover:bg-slate-900 transition-all duration-300">
-            <div class="flex flex-col md:flex-row md:justify-between">
+            <div class="flex flex-wrap gap-4 md:flex-row md:justify-between">
               <div 
                 v-for="(item, index) in techStack" 
                 :key="index" 
