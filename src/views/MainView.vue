@@ -250,16 +250,16 @@ const openNav = () => {
       </div>
       <div class="flex flex-row gap-2 justify-center items-center">
         <a href="https://github.com/ayiis218" target="_blank" rel="noopener noreferrer">
-          <AkGithubFill class="w-10 h-10"/>
+          <AkGithubFill class="w-6 h-6"/>
         </a>
         <a href="https://www.linkedin.com/in/ayi-solahudin" target="_blank" rel="noopener noreferrer">
-          <AkLinkedinBoxFill class="w-10 h-10"/>
+          <AkLinkedinBoxFill class="w-6 h-6"/>
         </a>
         <a href="https://www.instagram.com/ayiis___" target="_blank" rel="noopener noreferrer">
-          <AkInstagramFill class="w-10 h-10"/>
+          <AkInstagramFill class="w-6 h-6"/>
         </a>
-        <a href="mailto:[ayi.shallahudin@gmail.com]" target="_blank" rel="noopener noreferrer">
-          <FeMail class="w-10 h-10"/>
+        <a href="mailto:ayi.shallahudin@gmail.com" target="_blank" rel="noopener noreferrer">
+          <FeMail class="w-6 h-6"/>
         </a>
       </div>
     </motion.footer>
