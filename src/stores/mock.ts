@@ -147,10 +147,7 @@ export const dataEducation = [
           {
             title: "",
             list: [
-              "Developed enterprise web application using Next.js, Radix UI, TanStack React Query, and Zustand.",
-              "Built responsive UI with analytics charts",
-              "Integrated BRISTARS Mobile",
-              "Applied ElasticSearch APM for monitoring."
+              ""
             ]
           }
         ]
@@ -159,3 +156,67 @@ export const dataEducation = [
   }
 ]
 
+
+export const techStack = [
+  {
+    title: "Language",
+    list: ["JavaScript", "TypeScript", "PHP"]
+  },
+  {
+    title: "Framework",
+    list: ["React Js", "Next Js", "Vue Js", "React Native", "Express.js", "Laravel"]
+  },
+  {
+    title: "Database",
+    list: ["PostgreSQL", "MySQL"]
+  },
+  {
+    title: "Tools/Other",
+    list: ["Github", "GitLab", "Bitbucket", "Postman", "Docker", "Kubernetes", "Jira", "Jenkins", "Agile/Scrum"]
+  }
+]
+
+export const dataProject = [
+  {
+    projectName: "ProCash",
+    description: "",
+    images: "",
+    link: "",
+    techStack: "Laravel"
+  },
+  {
+    projectName: "Ambilin Dashboard Internal - System Management User & Pickup Monitoring",
+    description: "",
+    images: "",
+    link: "",
+    techStack: "Next.js, Tailwind CSS, PostgreSQL"
+  },
+  {
+    projectName: "Ambilin Dashboard Partner - Order Management Partner",
+    description: "",
+    images: "",
+    link: "",
+    techStack: "Next.js, Tailwind CSS, PostgreSQL"
+  },
+  {
+    projectName: "Ambilin - Cash Pickup & Order Management",
+    description: "",
+    images: "",
+    link: "",
+    techStack: "Next.js, Tailwind CSS, PostgreSQL"
+  },
+  {
+    projectName: "BRISilk - Shortlink URL",
+    description: "",
+    images: "",
+    link: "",
+    techStack: "Next.js, Material UI, React Query, MySQL"
+  },
+  {
+    projectName: "CEISA 4.0",
+    description: "",
+    images: "",
+    link: "",
+    techStack: "React Js, Ant Design, Hightchart, ElasticSearch, Java, Java Spring Boot"
+  }
+]
