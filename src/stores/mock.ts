@@ -90,6 +90,7 @@ export const dataExperience = [
     date: "Apr '23 - Present",
     experience: [
       {
+        title: "",
         project: [
           {
             title: "CEISA 4.0",
@@ -113,18 +114,24 @@ export const dataEducation = [
     date: "May '22 - Aug '24",
     experience: [
       {
-        list: [
-          "Basic algorithm, flowchart, and programming logic",
-          "Fundamental programming concept",
-          "Function, variable, framework and data structure",
-          "Basic database and SQL",
-          "Rest API and web service",
-          "Framework, Library, and Tools",
-          "Study case for build web application",
-          "Developed with <b class='text-slate-200'>React Js, Next Js, PostgreSQL, Express Js, Styled Component, and style-components</b>.",
-          "Collaborate with team for build web application",
-          "Deploy mechanism for web application to production",
-          "Daily standup, weekly review, and sprint planning"
+        title: "",
+        project: [
+          {
+            title: "",
+            list: [
+              "Basic algorithm, flowchart, and programming logic",
+              "Fundamental programming concept",
+              "Function, variable, framework and data structure",
+              "Basic database and SQL",
+              "Rest API and web service",
+              "Framework, Library, and Tools",
+              "Study case for build web application",
+              "Developed with <b class='text-slate-200'>React Js, Next Js, PostgreSQL, Express Js, Styled Component, and style-components</b>.",
+              "Collaborate with team for build web application",
+              "Deploy mechanism for web application to production",
+              "Daily standup, weekly review, and sprint planning"
+            ]
+          }
         ]
       }
     ]
@@ -135,11 +142,17 @@ export const dataEducation = [
     date: "Jul '16 - May '19",
     experience: [
       {
-        list: [
-          "Developed enterprise web application using Next.js, Radix UI, TanStack React Query, and Zustand.",
-          "Built responsive UI with analytics charts",
-          "Integrated BRISTARS Mobile",
-          "Applied ElasticSearch APM for monitoring."
+        title: "",
+        project: [
+          {
+            title: "",
+            list: [
+              "Developed enterprise web application using Next.js, Radix UI, TanStack React Query, and Zustand.",
+              "Built responsive UI with analytics charts",
+              "Integrated BRISTARS Mobile",
+              "Applied ElasticSearch APM for monitoring."
+            ]
+          }
         ]
       }
     ]
