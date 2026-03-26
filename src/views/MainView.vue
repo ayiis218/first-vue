@@ -1,7 +1,9 @@
 <script lang="ts" setup>
+import CardSection from '@/composables/card.section.vue'
 import { motion } from 'motion-v';
 import { ref } from 'vue';
 import { SuArrowUpCircle, ThAlignJustify, SuClose } from '@kalimahapps/vue-icons';
+import { dataExperience,dataEducation } from '@/stores/mock';
 
 const isNavOpen = ref(false);
 const isMobile = ref(false);
@@ -47,6 +49,7 @@ const openNav = () => {
 
 <template>
   <div class="min-h-screen bg-slate-950 text-slate-200 selection:bg-indigo-500/30 font-sans pb-12">
+  
     <div v-if="isMobile" class="sticky top-8 flex flex-row justify-end pr-8 z-50">
       <button @click="openNav">
         <ThAlignJustify class="w-18 h-18"/>
@@ -129,104 +132,14 @@ const openNav = () => {
         </div>
 
         <div class="grid gap-6">
-          <div class="group relative p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-indigo-500/30 hover:bg-slate-900 transition-all duration-300">
-            <div class="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
-              <div>
-                <h4 class="text-lg font-semibold text-slate-100">PT Bank Rakyat Indonesia (Persero) Tbk</h4>
-                <p class="text-indigo-400 text-sm font-medium">Frontend Developer</p>
-              </div>
-              <span class="text-xs font-medium text-slate-500 bg-slate-800/80 px-3 py-1 rounded-full whitespace-nowrap">Apr '23 - Present</span>
-            </div>
-            
-            <div class="space-y-5 text-slate-400 text-sm leading-relaxed relative z-10">
-              <div>
-                <h5 class="inline-flex items-center gap-2 font-medium text-slate-300 mb-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
-                  APP Division
-                </h5>
-                <div class="pl-5 border-l border-slate-700/50 space-y-4 ml-0.5">
-                  <div class="space-y-1.5">
-                    <h6 class="text-slate-200 font-medium text-[15px]">Loyalty Management System</h6>
-                    <ul class="list-disc pl-4 space-y-1 marker:text-slate-600">
-                      <li>Developed enterprise web application using 
-                        <span class="text-slate-200 font-bold"> Next.js, Radix UI, TanStack React Query, and Zustand.</span>
-                      </li>
-                      <li>Developed a QRIS cashback Promotion feature and implemented Maker-Checker-Signer Approval workflow.</li>
-                      <li>Built bulk upload mechanism for QRIS program management.</li>
-                    </ul>
-                  </div>
-                  <div class="space-y-1.5">
-                    <h6 class="text-slate-200 font-medium text-[15px]">ProCash</h6>
-                    <ul class="list-disc pl-4 space-y-1 marker:text-slate-600">
-                      <li>Developed a web platform using <span class="text-slate-200 font-bold">Laravel</span>.</li>
-                      <li>Developed a QRIS Cashback Promotion feature with Maker-Checker-Signer Approval workflow.</li>
-                      <li>Managed task tracking in Jira, handled feature testing, error handling, and bug fixing.</li>
-                    </ul>
-                  </div>
-                  <div class="space-y-1.5">
-                    <h6 class="text-slate-200 font-medium text-[15px]">Ambilin Cash Pick Up (BRILink)</h6>
-                    <ul class="list-disc pl-4 space-y-1 marker:text-slate-600">
-                      <li>Developed Ambilin Dashboard Internal & Partner using 
-                        <span class="text-slate-200 font-bold">Next.js and Tailwind CSS</span>
-                      </li>
-                      <li>Built Ambilin Dashboard Internal for Cash Pick Up monitoring and management system.</li>
-                      <li>Improved <span class="text-slate-200 font-bold">
-                        performance and order creation workflow
-                      </span>, and implemented <span class="text-slate-200 font-bold">
-                        Role-Based Access Control (RBAC)
-                      </span>.</li>
-                      <li class="text-slate-200 font-bold">
-                        Refactored legacy code to improve readability, maintainability, and performance
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h5 class="inline-flex items-center gap-2 font-medium text-slate-300 mb-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
-                  DDB Division
-                </h5>
-                <div class="pl-5 border-l border-slate-700/50 space-y-4 ml-0.5">
-                  <div class="space-y-1.5">
-                    <h6 class="text-slate-200 font-medium text-[15px]">BRISilk (Shortlink URL)</h6>
-                    <ul class="list-disc pl-4 space-y-1 marker:text-slate-600">
-                      <li>Developed shortlink management Web Application using 
-                        <span class="text-slate-200 font-bold">Next.js and Material UI</span>.
-                      </li>
-                      <li>Built <span class="text-slate-200 font-bold">responsive UI with analytics charts</span></li>
-                      <li>Integrated BRISTARS Mobile</li>
-                      <li>Applied ElasticSearch APM for monitoring.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="group relative p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-indigo-500/30 hover:bg-slate-900 transition-all duration-300">
-            <div class="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
-              <div>
-                <h4 class="text-lg font-semibold text-slate-100">Direktorat Jenderal Bea dan Cukai Kemenkeu RI</h4>
-                <p class="text-indigo-400 text-sm font-medium">Frontend Developer</p>
-              </div>
-              <span class="text-xs font-medium text-slate-500 bg-slate-800/80 px-3 py-1 rounded-full whitespace-nowrap">Oct '22 - Jan '23</span>
-            </div>
-
-            <div class="space-y-4 text-slate-400 text-sm leading-relaxed relative z-10">
-              <div class="space-y-1.5">
-                <h6 class="text-slate-200 font-medium text-[15px]">CEISA 4.0</h6>
-                <ul class="list-disc pl-4 space-y-1 marker:text-slate-600">
-                  <li>Developed responsive web layouts using <span class="text-slate-200 font-bold">React.js and Ant Design</span></li>
-                  <li>Integrated frontend services with backend APIs</li>
-                  <li>Performed feature testing, error handling, bug fixing, and managed tasks using Jira</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <CardSection
+            v-for="(item, index) in dataExperience"
+            :key="index"
+            :companyName="item.companyName"
+            :position="item.position"
+            :date="item.date"
+            :experience="item.experience"
+          />
         </div>
       </motion.section>
 
@@ -242,49 +155,14 @@ const openNav = () => {
         </div>
 
         <div class="grid gap-6">
-          <div class="group relative p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-purple-500/30 hover:bg-slate-900 transition-all duration-300">
-             <div class="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-indigo-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-             <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-4">
-              <div>
-                <h4 class="text-lg font-semibold text-slate-100">Pijar Camp</h4>
-                <p class="text-indigo-400 text-sm font-medium">Fullstack Developer</p>
-              </div>
-              <span class="text-xs font-medium text-slate-500 bg-slate-800/80 px-3 py-1 rounded-full whitespace-nowrap">May '22 - Aug '24</span>
-            </div>
-            <div class="space-y-4 text-slate-400 text-sm leading-relaxed relative z-10">
-              <ul class="list-disc pl-4 space-y-1 marker:text-slate-600">
-                <li>Learned essential skills of a Web Developer including 
-                  <span class="text-slate-200 font-bold">
-                    Algorithms, Node.js, Express.js, React.js, Next.js, Bootstrap, Postman, GitHub, and PostgreSQL.
-                  </span>
-                </li>
-                <li>Deployed multiple web applications applying production-ready engineering practices</li>
-                <li>Developed soft skills such as growth mindset, stress management, self-management, and time management</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="group relative p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-purple-500/30 hover:bg-slate-900 transition-all duration-300">
-            <div class="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-indigo-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-             <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-4">
-              <div>
-                <h4 class="text-lg font-semibold text-slate-100">State Vocational School 1 Kawali</h4>
-                <p class="text-indigo-400 text-sm font-medium">Software Engineering</p>
-              </div>
-              <span class="text-xs font-medium text-slate-500 bg-slate-800/80 px-3 py-1 rounded-full whitespace-nowrap">Jul '16 - May '19</span>
-            </div>
-            <div class="space-y-4 text-slate-400 text-sm leading-relaxed relative z-10">
-              <ul class="list-disc pl-4 space-y-1 marker:text-slate-600">
-                <li>Studied software engineering fundamentals: 
-                  <span class="text-slate-200 font-bold">
-                    HTML, CSS, Java, PHP, .NET, MySQL, and Algorithms.
-                  </span>
-                </li>
-                <li>Collaborated in team-based software projects with structured task distribution and integration</li>
-                <li>Participated in PKL (internship program) to gain real work experience.</li>
-              </ul>
-            </div>
-          </div>
+          <CardSection
+            v-for="(item, index) in dataEducation"
+            :key="index"
+            :companyName="item.companyName"
+            :position="item.position"
+            :date="item.date"
+            :experience="item.experience"
+          />
         </div>
       </motion.section>
 
@@ -299,13 +177,7 @@ const openNav = () => {
         </div>
 
         <div class="grid gap-6">
-          <div class="group relative p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-purple-500/30 hover:bg-slate-900 transition-all duration-300">
-            <div class="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-indigo-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-             <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-4">
-              <h4 class="text-lg font-semibold text-slate-100">Pijar Camp</h4>
-              <span class="text-xs font-medium text-slate-500 bg-slate-800/80 px-3 py-1 rounded-full whitespace-nowrap">May '22 - Aug '24</span>
-            </div>
-          </div>
+
         </div>
       </motion.section>
 
