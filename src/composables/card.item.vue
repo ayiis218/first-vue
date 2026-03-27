@@ -5,13 +5,26 @@ defineProps<{
   images: string[];
   techStack: string
 }>()
+
+// Eagerly import all assets so Vite bundles them and we can resolve paths dynamically
+const assetModules = import.meta.glob('@/assets/*.{png,jpg,jpeg,svg}', { eager: true, import: 'default' }) as Record<string, string>;
+
+const getImageUrl = (path: string) => {
+  // Extract filename like "lms.png" from "../assets/lms.png"
+  const fileName = path.split('/').pop();
+  if (!fileName) return path;
+
+  // Find the matching module injected by Vite
+  const modulePath = Object.keys(assetModules).find(k => k.endsWith('/' + fileName));
+  return modulePath ? assetModules[modulePath] : path;
+}
 </script>
 
 <template>
   <div class="flex flex-col gap-2 border border-slate-700 rounded-lg p-4">
     <div class="flex flex-row gap-2 ">
       <div v-for="(img, idx) in images" :key="idx" class="w-full h-full rounded-lg">
-        <img :src="img" :alt="title" class="w-full h-full object-cover rounded-lg">
+        <img :src="getImageUrl(img)" :alt="title" class="w-full h-full object-cover rounded-lg">
       </div>
     </div>
     <div class="flex flex-col">

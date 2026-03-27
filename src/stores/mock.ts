@@ -203,14 +203,14 @@ export const dataProject = [
   {
     projectName: "Ambilin Dashboard Internal - System Management User & Pickup Monitoring",
     description: "Web Application for user management and pickup monitoring by BRILink",
-    images: ["../assets/ambilin-internal.png", "../assets/ambilin-internal2.png"],
+    images: ["../assets/ambilin-internal.png", "../assets/ambilin-internal1.png"],
     link: "",
     techStack: "Next.js, Tailwind CSS, PostgreSQL, Docker, GO, ElasticSearch APM"
   },
   {
     projectName: "Ambilin Dashboard Partner - Order Management Partner",
     description: "Web Application for order management for Mitra BRILink",
-    images: ["../assets/ambilin-partner.png", "../assets/ambilin-partner2.png", "../assets/ambilin-partner3.png"],
+    images: ["../assets/ambilin-partner.png", "../assets/ambilin-partner2.png"],
     link: "",
     techStack: "Next.js, Tailwind CSS, PostgreSQL, Docker, GO, ElasticSearch APM"
   },
