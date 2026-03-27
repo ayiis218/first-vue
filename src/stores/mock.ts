@@ -189,50 +189,78 @@ export const dataProject = [
   {
     projectName: "LMS - Loyalty Management System",
     description: "Modern Web Application for loyalty program management by PT Bank Rakyat Indonesia (BRI)",
-    images: "../assets/images/lms.png",
+    images: ["src/assets/images/lms.png", "src/assets/images/lms2.png"],
     link: "",
     techStack: "React Js, Next Js, Radix UI, Tailwind CSS, TanStack Query, Zustand, PostgreSQL, Docker, GO, ElasticSearch APM"
   },
   {
     projectName: "ProCash",
     description: "Web Application for loyalty program management by PT Bank Rakyat Indonesia (BRI)",
-    images: "../assets/images/procash.png",
+    images: ["src/assets/images/procash.png", "src/assets/images/procash2.png"],
     link: "",
     techStack: "Laravel"
   },
   {
     projectName: "Ambilin Dashboard Internal - System Management User & Pickup Monitoring",
     description: "Web Application for user management and pickup monitoring by BRILink",
-    images: "../assets/images/ambilin-internal.png",
+    images: ["src/assets/images/ambilin-internal.png", "src/assets/images/ambilin-internal2.png"],
     link: "",
     techStack: "Next.js, Tailwind CSS, PostgreSQL, Docker, GO, ElasticSearch APM"
   },
   {
     projectName: "Ambilin Dashboard Partner - Order Management Partner",
     description: "Web Application for order management for Mitra BRILink",
-    images: "../assets/images/ambilin-partner.png",
+    images: ["src/assets/images/ambilin-partner.png", "src/assets/images/ambilin-partner2.png", "src/assets/images/ambilin-partner3.png"],
     link: "",
     techStack: "Next.js, Tailwind CSS, PostgreSQL, Docker, GO, ElasticSearch APM"
   },
   {
     projectName: "Ambilin - Cash Pickup & Order Management",
     description: "Web Application for cash pickup and order management by BRILink",
-    images: "../assets/images/ambilin.png",
+    images: ["src/assets/images/ambilin.png"],
     link: "",
     techStack: "Next.js, Tailwind CSS, PostgreSQL, Docker, GO, ElasticSearch APM"
   },
   {
     projectName: "BRISilk - Shortlink URL",
     description: "Web Application for shortlink URL by PT Bank Rakyat Indonesia (BRI)",
-    images: "../assets/images/brsilk.png",
+    images: ["src/assets/images/brisilk.png"],
     link: "",
     techStack: "Next.js, Material UI, React Query, MySQL, Docker, GO, ElasticSearch APM"
   },
   {
     projectName: "CEISA 4.0",
     description: "Web Application for customs data management by Direktorat Jenderal Bea Cukai (DJBC) Indonesia",
-    images: "../assets/images/ceisa.png",
+    images: ["src/assets/images/ceisa.png"],
     link: "",
     techStack: "React Js, Ant Design, Hightchart, ElasticSearch, Java, Java Spring Boot"
+  }
+]
+
+export const contact = [
+  {
+    name: "GitHub",
+    url: "https://github.com/ayiis218",
+    icon: "github"
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/ayi-solahudin",
+    icon: "linkedin"
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/ayiis___",
+    icon: "instagram"
+  },
+  {
+    name: "Email",
+    url: "shallahudin.ayi@gmail.com",
+    icon: "email"
+  },
+  {
+    name: "WhatsApp",
+    url: "https://wa.me/6281222863028",
+    icon: "whatsapp"
   }
 ]

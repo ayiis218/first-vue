@@ -4,8 +4,8 @@ import ListItem from '@/composables/list.item.vue'
 import CardItem from '@/composables/card.item.vue'
 import { motion } from 'motion-v';
 import { ref } from 'vue';
-import { SuArrowUpCircle, ThAlignJustify, SuClose, AkGithubFill, AkLinkedinBoxFill, AkInstagramFill, FeMail } from '@kalimahapps/vue-icons';
-import { dataExperience,dataEducation, techStack, dataProject } from '@/stores/mock';
+import { SuArrowUpCircle, ThAlignJustify, SuClose, AkGithubFill, AkLinkedinBoxFill, AkInstagramFill, FeMail, AkWhatsappFill } from '@kalimahapps/vue-icons';
+import { dataExperience,dataEducation, techStack, dataProject, contact } from '@/stores/mock';
 import { useScreenSize } from '@/helper/screen.size';
 
 const { isMobile } = useScreenSize();
@@ -46,6 +46,14 @@ const onScrollTo = (id:string)=> {
 
 const openNav = () => {
   isNavOpen.value = !isNavOpen.value;
+}
+
+const iconMap = {
+  github: AkGithubFill,
+  linkedin: AkLinkedinBoxFill,
+  instagram: AkInstagramFill,
+  email: FeMail,
+  whatsapp: AkWhatsappFill,
 }
 
 </script>
@@ -222,13 +230,13 @@ const openNav = () => {
           <div class="flex-1 h-px bg-slate-800"></div>
         </div>
 
-        <div class="grid gap-6">
+        <div class="grid gap-6 grid-cols-1 md:grid-cols-2">
           <CardItem 
             v-for="(item, index) in dataProject"
             :key="index"
             :title="item.projectName"
             :description="item.description"
-            :image="item.images"
+            :images="item.images"
             :techStack="item.techStack"
           />
         </div>
@@ -249,18 +257,11 @@ const openNav = () => {
         </p>
       </div>
       <div class="flex flex-row gap-2 justify-center items-center">
-        <a href="https://github.com/ayiis218" target="_blank" rel="noopener noreferrer">
-          <AkGithubFill class="w-6 h-6"/>
-        </a>
-        <a href="https://www.linkedin.com/in/ayi-solahudin" target="_blank" rel="noopener noreferrer">
-          <AkLinkedinBoxFill class="w-6 h-6"/>
-        </a>
-        <a href="https://www.instagram.com/ayiis___" target="_blank" rel="noopener noreferrer">
-          <AkInstagramFill class="w-6 h-6"/>
-        </a>
-        <a href="mailto:shallahudin.ayi@gmail.com" target="_blank" rel="noopener noreferrer">
-          <FeMail class="w-6 h-6"/>
-        </a>
+        <div v-for="(item, index) in contact" :key="index">
+          <a :href="item.url" target="_blank" rel="noopener noreferrer">
+            <component :is="iconMap[item.icon as keyof typeof iconMap]" class="w-6 h-6" />
+          </a>
+        </div>
       </div>
     </motion.footer>
 
