@@ -3,6 +3,7 @@ defineProps<{
   title: string;
   description: string;
   images: string[];
+  link: string;
   techStack: string
 }>()
 
@@ -10,11 +11,9 @@ defineProps<{
 const assetModules = import.meta.glob('@/assets/*.{png,jpg,jpeg,svg}', { eager: true, import: 'default' }) as Record<string, string>;
 
 const getImageUrl = (path: string) => {
-  // Extract filename like "lms.png" from "../assets/lms.png"
   const fileName = path.split('/').pop();
   if (!fileName) return path;
 
-  // Find the matching module injected by Vite
   const modulePath = Object.keys(assetModules).find(k => k.endsWith('/' + fileName));
   return modulePath ? assetModules[modulePath] : path;
 }
@@ -28,7 +27,9 @@ const getImageUrl = (path: string) => {
       </div>
     </div>
     <div class="flex flex-col">
-      <h5 class="text-base font-semibold text-slate-100">{{ title }}</h5>
+      <a :href="link" target="_blank">
+        <h5 class="text-base font-semibold text-slate-100">{{ title }}</h5>
+      </a>
       <p class="text-slate-400 text-sm leading-relaxed">{{ description }}</p>
       <h5 class="text-slate-400 text-sm leading-relaxed mt-2">
         Tech Stack: 

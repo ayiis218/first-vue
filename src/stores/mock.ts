@@ -188,7 +188,7 @@ export const techStack = [
 export const dataProject = [
   {
     projectName: "LMS - Loyalty Management System",
-    description: "Modern Web Application for loyalty program management by PT Bank Rakyat Indonesia (BRI)",
+    description: "Modern Web Application program management by PT Bank Rakyat Indonesia (BRI).",
     images: ["../assets/lms.png", "../assets/lms2.png"],
     link: "",
     techStack: "React Js, Next Js, Radix UI, Tailwind CSS, TanStack Query, Zustand, PostgreSQL, Docker, GO, ElasticSearch APM"
@@ -202,37 +202,37 @@ export const dataProject = [
   },
   {
     projectName: "Ambilin Dashboard Internal - System Management User & Pickup Monitoring",
-    description: "Web Application for user management and pickup monitoring by BRILink",
+    description: "Web Application for user management and pickup monitoring by BRILink, application funcionaly for management mitra, agent, role, user and cash pickup monitoring",
     images: ["../assets/ambilin-internal.png", "../assets/ambilin-internal1.png"],
-    link: "",
+    link: "https://play.google.com/store/apps/details?id=id.co.bri.brilinkmobile&hl=id",
     techStack: "Next.js, Tailwind CSS, PostgreSQL, Docker, GO, ElasticSearch APM"
   },
   {
     projectName: "Ambilin Dashboard Partner - Order Management Partner",
-    description: "Web Application for order management for Mitra BRILink",
+    description: "Web Application for order management for Mitra BRILink, in this application Mitra can order cash pickup, management outlet to handle order cash pickup by Finance Manager and management user for outlet by Head Office",
     images: ["../assets/ambilin-partner.png", "../assets/ambilin-partner2.png"],
-    link: "",
+    link: "https://play.google.com/store/apps/details?id=id.co.bri.brilinkmobile&hl=id",
     techStack: "Next.js, Tailwind CSS, PostgreSQL, Docker, GO, ElasticSearch APM"
   },
   {
     projectName: "Ambilin - Cash Pickup & Order Management",
-    description: "Web Application for cash pickup and order management by BRILink",
+    description: "Web Application for cash pickup and order management by BRILink. Application for customer to order cash pickup and for agent BRILink to pickup order by customor and nasabah mitra",
     images: ["../assets/ambilin.png", "../assets/ambilin2.png", "../assets/ambilin3.png", "../assets/ambilin4.png"],
-    link: "",
+    link: "https://play.google.com/store/apps/details?id=id.co.bri.brilinkmobile&hl=id",
     techStack: "Next.js, Tailwind CSS, PostgreSQL, Docker, GO, ElasticSearch APM"
   },
   {
     projectName: "BRISilk - Shortlink URL",
     description: "Web Application for shortlink URL by PT Bank Rakyat Indonesia (BRI)",
     images: ["../assets/brisilk.png", "../assets/brisilk2.png"],
-    link: "",
+    link: "https://brilianapps.bri.co.id",
     techStack: "Next.js, Material UI, React Query, MySQL, Docker, GO, ElasticSearch APM"
   },
   {
     projectName: "CEISA 4.0",
     description: "Web Application for customs data management by Direktorat Jenderal Bea Cukai (DJBC) Indonesia",
-    images: ["../assets/ceisa.png"],
-    link: "",
+    images: ["../assets/ceisa.jpg"],
+    link: "https://portal.beacukai.go.id/portal/login",
     techStack: "React Js, Ant Design, Hightchart, ElasticSearch, Java, Java Spring Boot"
   }
 ]

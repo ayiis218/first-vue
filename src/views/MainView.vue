@@ -236,6 +236,7 @@ const iconMap = {
             :key="index"
             :title="item.projectName"
             :description="item.description"
+            :link="item.link"
             :images="item.images"
             :techStack="item.techStack"
           />
