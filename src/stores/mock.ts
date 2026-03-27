@@ -120,11 +120,11 @@ export const dataEducation = [
             title: "",
             list: [
               "Basic algorithm, flowchart, and programming logic",
-              "Fundamental programming concept",
               "Function, variable, framework and data structure",
+              "Framework, Library, database and Tools programming",
+              "React Js, next Js, Express Js, PostgreSQL, Styled Component, and style-components",
               "Basic database and SQL",
               "Rest API and web service",
-              "Framework, Library, and Tools",
               "Study case for build web application",
               "Developed with <b class='text-slate-200'>React Js, Next Js, PostgreSQL, Express Js, Styled Component, and style-components</b>.",
               "Collaborate with team for build web application",
@@ -147,7 +147,16 @@ export const dataEducation = [
           {
             title: "",
             list: [
-              ""
+              "Basic algorithm, flowchart, ERD and programming logic",
+              "Fundamental programming concept",
+              "Basic database and SQL",
+              "Basic web application use PHP and MySQL",
+              "Study case for build web application",
+              "Developed with <b class='text-slate-200'>PHP, MySQL, and HTML</b>.",
+              "Internship at Faculty of Tekhik Informatika, Universitas Siliwangi",
+              "Developed web application <b class='text-slate-200'>Sistem Informasi</b> for Faculty of Tekhik Informatika, Universitas Siliwangi",
+              "Documentation for web application",
+              "Deploy mechanism for web application to production",
             ]
           }
         ]
@@ -178,44 +187,51 @@ export const techStack = [
 
 export const dataProject = [
   {
+    projectName: "LMS - Loyalty Management System",
+    description: "Modern Web Application for loyalty program management by PT Bank Rakyat Indonesia (BRI)",
+    images: "../assets/images/lms.png",
+    link: "",
+    techStack: "React Js, Next Js, Radix UI, Tailwind CSS, TanStack Query, Zustand, PostgreSQL, Docker, GO, ElasticSearch APM"
+  },
+  {
     projectName: "ProCash",
-    description: "",
-    images: "",
+    description: "Web Application for loyalty program management by PT Bank Rakyat Indonesia (BRI)",
+    images: "../assets/images/procash.png",
     link: "",
     techStack: "Laravel"
   },
   {
     projectName: "Ambilin Dashboard Internal - System Management User & Pickup Monitoring",
-    description: "",
-    images: "",
+    description: "Web Application for user management and pickup monitoring by BRILink",
+    images: "../assets/images/ambilin-internal.png",
     link: "",
-    techStack: "Next.js, Tailwind CSS, PostgreSQL"
+    techStack: "Next.js, Tailwind CSS, PostgreSQL, Docker, GO, ElasticSearch APM"
   },
   {
     projectName: "Ambilin Dashboard Partner - Order Management Partner",
-    description: "",
-    images: "",
+    description: "Web Application for order management for Mitra BRILink",
+    images: "../assets/images/ambilin-partner.png",
     link: "",
-    techStack: "Next.js, Tailwind CSS, PostgreSQL"
+    techStack: "Next.js, Tailwind CSS, PostgreSQL, Docker, GO, ElasticSearch APM"
   },
   {
     projectName: "Ambilin - Cash Pickup & Order Management",
-    description: "",
-    images: "",
+    description: "Web Application for cash pickup and order management by BRILink",
+    images: "../assets/images/ambilin.png",
     link: "",
-    techStack: "Next.js, Tailwind CSS, PostgreSQL"
+    techStack: "Next.js, Tailwind CSS, PostgreSQL, Docker, GO, ElasticSearch APM"
   },
   {
     projectName: "BRISilk - Shortlink URL",
-    description: "",
-    images: "",
+    description: "Web Application for shortlink URL by PT Bank Rakyat Indonesia (BRI)",
+    images: "../assets/images/brsilk.png",
     link: "",
-    techStack: "Next.js, Material UI, React Query, MySQL"
+    techStack: "Next.js, Material UI, React Query, MySQL, Docker, GO, ElasticSearch APM"
   },
   {
     projectName: "CEISA 4.0",
-    description: "",
-    images: "",
+    description: "Web Application for customs data management by Direktorat Jenderal Bea Cukai (DJBC) Indonesia",
+    images: "../assets/images/ceisa.png",
     link: "",
     techStack: "React Js, Ant Design, Hightchart, ElasticSearch, Java, Java Spring Boot"
   }

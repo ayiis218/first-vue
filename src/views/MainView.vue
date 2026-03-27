@@ -258,7 +258,7 @@ const openNav = () => {
         <a href="https://www.instagram.com/ayiis___" target="_blank" rel="noopener noreferrer">
           <AkInstagramFill class="w-6 h-6"/>
         </a>
-        <a href="mailto:ayi.shallahudin@gmail.com" target="_blank" rel="noopener noreferrer">
+        <a href="mailto:shallahudin.ayi@gmail.com" target="_blank" rel="noopener noreferrer">
           <FeMail class="w-6 h-6"/>
         </a>
       </div>
