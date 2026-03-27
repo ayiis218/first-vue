@@ -217,14 +217,14 @@ export const dataProject = [
   {
     projectName: "Ambilin - Cash Pickup & Order Management",
     description: "Web Application for cash pickup and order management by BRILink",
-    images: ["src/assets/images/ambilin.png"],
+    images: ["src/assets/images/ambilin.png", "src/assets/images/ambilin2.png", "src/assets/images/ambilin3.png", "src/assets/images/ambilin4.png"],
     link: "",
     techStack: "Next.js, Tailwind CSS, PostgreSQL, Docker, GO, ElasticSearch APM"
   },
   {
     projectName: "BRISilk - Shortlink URL",
     description: "Web Application for shortlink URL by PT Bank Rakyat Indonesia (BRI)",
-    images: ["src/assets/images/brisilk.png"],
+    images: ["src/assets/images/brisilk.png", "src/assets/images/brisilk2.png"],
     link: "",
     techStack: "Next.js, Material UI, React Query, MySQL, Docker, GO, ElasticSearch APM"
   },
