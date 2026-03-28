@@ -259,7 +259,7 @@ const iconMap = {
       </div>
       <div class="flex flex-row gap-2 justify-center items-center">
         <div v-for="(item, index) in contact" :key="index">
-          <a :href="item.url" target="_blank" rel="noopener noreferrer">
+          <a :href="item.url" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500 hover:transition-colors hover:duration-300 hover:scale-105">
             <component :is="iconMap[item.icon as keyof typeof iconMap]" class="w-6 h-6" />
           </a>
         </div>

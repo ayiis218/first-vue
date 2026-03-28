@@ -87,7 +87,7 @@ export const dataExperience = [
   {
     companyName: "Direktorat Jenderal Bea Cukai (DJBC) Indonesia",
     position: "Frontend Developer",
-    date: "Apr '23 - Present",
+    date: "Oct '22 - Jan '23",
     experience: [
       {
         title: "",
@@ -186,6 +186,13 @@ export const techStack = [
 ]
 
 export const dataProject = [
+  {
+    projectName: "Portofolio",
+    description: "Portofolio application for user to show their profile, experience, education, sertifikat, technical skills, project and contact",
+    images: ["../assets/portofolio.png"],
+    link: "https://ayi-shallahudin.vercel.app/",
+    techStack: "Vue Js, Vite, Tailwind CSS, motion-v, vercel"
+  },
   {
     projectName: "LMS - Loyalty Management System",
     description: "Modern Web Application program management by PT Bank Rakyat Indonesia (BRI).",

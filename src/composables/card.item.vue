@@ -28,7 +28,7 @@ const getImageUrl = (path: string) => {
     </div>
     <div class="flex flex-col">
       <a :href="link" target="_blank">
-        <h5 class="text-base font-semibold text-slate-100">{{ title }}</h5>
+        <h5 class="text-base font-semibold text-slate-100 hover:text-indigo-500 hover:transition-colors">{{ title }}</h5>
       </a>
       <p class="text-slate-400 text-sm leading-relaxed">{{ description }}</p>
       <h5 class="text-slate-400 text-sm leading-relaxed mt-2">
