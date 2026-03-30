@@ -58,6 +58,10 @@
   font-weight: normal;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--color-text);
   background: var(--color-background);

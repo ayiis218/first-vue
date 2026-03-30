@@ -5,7 +5,7 @@ import CardItem from '@/composables/card.item.vue'
 import { motion } from 'motion-v';
 import { ref } from 'vue';
 import { SuArrowUpCircle, ThAlignJustify, SuClose, AkGithubFill, AkLinkedinBoxFill, AkInstagramFill, FeMail, AkWhatsappFill } from '@kalimahapps/vue-icons';
-import { dataExperience,dataEducation, techStack, dataProject, contact } from '@/stores/mock';
+import { dataExperience, dataEducation, techStack, dataProject, contact, dataCertificate } from '@/stores/mock';
 import { useScreenSize } from '@/helper/screen.size';
 
 const { isMobile } = useScreenSize();
@@ -115,11 +115,9 @@ const iconMap = {
           Ayi Solahudin
         </h1>
         <h2 class="text-indigo-400 font-medium tracking-wide uppercase text-sm">Fullstack Developer</h2>
-        <p class="text-slate-400 leading-relaxed text-sm md:text-base font-light max-w-xl text-justify">
-          Frontend Developer with 3+ years of experience, building scalable enterprise web platforms at 
-          <span class="text-slate-200 font-medium">PT Bank Rakyat Indonesia (BRI)</span>. 
-          Experienced in modern JavaScript ecosystems, performance optimization, and secure system workflows. 
-          Previously part of the CEISA team at <span class="text-slate-200 font-medium">Direktorat Jenderal Bea Cukai (DJBC) Indonesia</span>.
+        <p class="text-slate-300 leading-relaxed text-sm md:text-base font-normal max-w-xl text-justify">
+          Frontend Developer with 3+ years of experience in building <strong class="text-indigo-400 font-semibold">high-performance, scalable enterprise web applications</strong>. 
+          With a proven track record at <span class="text-slate-100 font-semibold">PT Bank Rakyat Indonesia (BRI)</span> and <span class="text-slate-100 font-semibold">Direktorat Jenderal Bea Cukai</span>, I architect complex state management, optimize rendering performance, and deliver seamless user experiences that drive business impact.
         </p>
       </div>
     </motion.header>
@@ -188,7 +186,14 @@ const iconMap = {
         </div>
 
         <div class="grid gap-6">
-
+          <CardSection
+            v-for="(item, index) in dataCertificate"
+            :key="index"
+            :companyName="item.companyName"
+            :position="item.position"
+            :date="item.date"
+            :experience="item.experience"
+          />
         </div>
       </motion.section>
 

@@ -20,21 +20,22 @@ const getImageUrl = (path: string) => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-2 border border-slate-700 rounded-lg p-4">
-    <div class="flex flex-row gap-2 ">
-      <div v-for="(img, idx) in images" :key="idx" class="w-full h-full rounded-lg">
-        <img :src="getImageUrl(img)" :alt="title" class="w-full h-full object-cover rounded-lg">
+  <a :href="link" target="_blank" class="inline-flex w-fit group/link">
+    <div class="group relative flex flex-col gap-3 rounded-xl bg-slate-900/40 p-5 border border-slate-800 transition-all duration-300 hover:-translate-y-1.5 hover:bg-slate-800/50 hover:border-indigo-500/50 hover:shadow-[0_0_20px_rgba(99,102,241,0.15)] overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+      <div class="flex flex-row gap-3 overflow-hidden rounded-lg">
+        <div v-for="(img, idx) in images" :key="idx" class="w-full max-h-48 rounded-lg overflow-hidden">
+          <img :src="getImageUrl(img)" :alt="title" class="w-full h-full object-cover rounded-lg transform group-hover:scale-105 transition-transform duration-700 ease-out">
+        </div>
+      </div>
+      <div class="flex flex-col z-10 mt-2">
+          <h5 class="text-lg font-bold text-slate-100 group-hover/link:text-indigo-400 transition-colors">{{ title }}</h5>
+        <p class="text-slate-300 text-sm leading-relaxed mt-2">{{ description }}</p>
+        <div class="mt-4 pt-4 border-t border-slate-700/50">
+          <h5 class="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-2">Tech Stack</h5>
+          <p class="text-indigo-300/90 text-sm font-medium">{{ techStack }}</p>
+        </div>
       </div>
     </div>
-    <div class="flex flex-col">
-      <a :href="link" target="_blank">
-        <h5 class="text-base font-semibold text-slate-100 hover:text-indigo-500 hover:transition-colors">{{ title }}</h5>
-      </a>
-      <p class="text-slate-400 text-sm leading-relaxed">{{ description }}</p>
-      <h5 class="text-slate-400 text-sm leading-relaxed mt-2">
-        Tech Stack: 
-        <span class="text-slate-200">{{ techStack }}</span>
-      </h5>
-    </div>
-  </div>
+  </a>
 </template>

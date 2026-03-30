@@ -12,7 +12,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="group relative p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-indigo-500/30 hover:bg-slate-900 transition-all duration-300">
+  <div class="group relative p-6 rounded-2xl bg-slate-900/40 border border-slate-800 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 hover:border-indigo-500/30 hover:bg-slate-800/40 transition-all duration-400">
     <div class="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
       <div>

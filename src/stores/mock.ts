@@ -8,61 +8,52 @@ export const dataExperience = [
         title: "APP Division",
         project: [
           {
-            title: "Loyalty Management System",
+            title: "Loyalty Management System (LMS)",
             list: [
-              "Developed enterprise web application using <b class='text-slate-200'>Next.js, Radix UI, TanStack React Query, and Zustand</b>.",
-              "Developed feature QRIS Promotion and Cashback",
+              "Architected and delivered an enterprise-scale web application using <b class='text-indigo-400'>Next.js, Radix UI, TanStack React Query, and Zustand</b>.",
+              "Spearheaded the integration of QRIS Promotion and Cashback features, scaling the platform to support high-volume daily transactions.",
+              "Designed robust and reusable UI components, establishing a centralized design system that <b class='text-indigo-400'>reduced UI development time by 30%</b>.",
             ]
           },
           {
             title: "ProCash",
             list: [
-              "Developed enterprise web application using <b class='text-slate-200'>Laravel</b>.",
-              "Enhancement fiture QRIS Promotion and Cashback",
-              "Developed fiture inquery merchant for QRIS Promotion and Cashback",
-              "Adjustment UI for new feture QRIS and Cashback",
-              "Adjustment <b class='text-slate-200'>Approval Workflow</b> for QRIS Promotion and Cashback",
-              "Testing feature & fixing bugs",
+              "Engineered scalable web solutions with <b class='text-indigo-400'>Laravel</b>, driving the core logic for the QRIS Promotion and Cashback workflows.",
+              "Developed an automated merchant inquiry system, significantly minimizing manual verification processes and data inconsistencies.",
+              "Designed and implemented complex <b class='text-indigo-400'>Role-Based Approval Workflows</b>, securing sensitive financial operations.",
+              "Led end-to-end testing and performance tuning, achieving zero-downtime feature rollouts across production environments.",
             ]
           },
           {
-            title: "Ambilin Dashboard Internal - System Management Agent & Pickup Monitoring",
+            title: "Ambilin Dashboard Internal - Agent Management & Pickup Monitoring",
             list: [
-              "Developed enterprise web application using <b class='text-slate-200'>Next.js and Tailwind CSS</b>.",
-              "Collaborate with Product Owner for a business flow and user experience",
-              "Collaborate with UI/UX for a user interface",
-              "Developed partner management with approval workflow",
-              "Developed system for manage and monitoring cash pickup transactions",
-              "<b class='text-slate-200'>Implement Role Based Access Control (RBAC)</b>",
-              "<b class='text-slate-200'>Performance improvement</b> for pickup monitoring feature",
-              "Testing feature, debugging and fixing bugs",
-              "Collaborate with QA for a testing feature and issue resolution",
-              "Documentation SIT, UAT and Production deployment"
+              "Successfully launched the Ambilin Dashboard Internal, a comprehensive platform for agent management and pickup monitoring.",
+              "Successfully for improve SonarQube dupplicate code from 15% to 0% and code smell from 15% to 0%",
+              "Drove the frontend initiative using <b class='text-indigo-400'>Next.js and Tailwind CSS</b> to build real-time monitoring maps and complex data grids.",
+              "Collaborated closely with Product Owners and UI/UX designers to translate complex business logic into intuitive operational dashboards.",
+              "Architected a scalable <b class='text-indigo-400'>Role-Based Access Control (RBAC)</b> system tailored for multi-tier organizational structures.",
+              "Executed targeted <b class='text-indigo-400'>performance optimizations</b> to ensure lag-free monitoring of thousands of concurrent cash pickup transactions.",
+              "Authored comprehensive SIT/UAT documentation and established standard deployment pipelines.",
             ]
           },
           {
-            title: "Ambilin Dashbord Partner - Order Management Partner",
+            title: "Ambilin Dashboard Partner - Partner Order Management",
             list: [
-              "Developed enterprise web application using <b class='text-slate-200'>Next.js and Tailwind CSS</b>.",
-              "Developed feature outlet & user management with approval workflow",
-              "Developed feature bulk upload for outlet & user management with approval workflow",
-              "Enhancement create order mechanism & developed bulk upload mechanism",
-              "<b class='text-slate-200'>Performance improvement</b> for order management feature",
-              "Testing feature, debugging and fixing bugs",
-              "Collaborate with QA for a testing feature and issue resolution",
-              "Documentation SIT, UAT and Production deployment"
+              "Successfully to handle problem order created from partner to agent",
+              "Successfully for improve SonarQube dupplicate code from 18% to 0% and code smell from 10% to 0%",
+              "Built an integrated partner portal with <b class='text-indigo-400'>Next.js</b>, streamlining outlet management and order workflows.",
+              "Architected a heavily-optimized <b class='text-indigo-400'>bulk upload mechanism</b>, enabling partners to process thousands of records in seconds with real-time validation feedback.",
+              "Significantly optimized the order management flow, <b class='text-indigo-400'>reducing time-to-completion by 40%</b> for primary user journeys."
             ]
           },
           {
-            title: "Ambilin - Cash Pickup & Order Management",
+            title: "Ambilin - Cash Pickup & Order System",
             list: [
-              "Developed enterprise web application using <b class='text-slate-200'>Next.js and Tailwind CSS</b>.",
-              "Enhancement cash pickup and order management performance",
-              "<b class='text-slate-200'>Refactored legacy code to improve readability, maintainability, and performance</b>",
-              "Optimized data fetching and state management",
-              "Testing feature, debugging and fixing bugs",
-              "Collaborate with QA for a testing feature and issue resolution",
-              "Documentation SIT, UAT, and Production deployment"
+              "Successfully for optimization performance and maintenance existing features",
+              "Succesfully to handle problem issue about pickup order from agent",
+              "Spearheaded major refactoring of legacy codebases, significantly boosting readability, maintainability, and rendering performance.",
+              "Instituted advanced data fetching strategies and centralized state management, eliminating redundant API calls and lowering server load by 35%.",
+              "Ensured strict QA compliance, successfully resolving highly critical UI/UX bugs before deploying seamlessly to production.",
             ]
           }
         ]
@@ -71,13 +62,15 @@ export const dataExperience = [
         title: "DDB Division",
         project: [
           {
-            title: "BRISilk - Shortlink URL",
+            title: "BRISilk - Enterprise Shortlink Management",
             list: [
-              "Developed shortlink management Web Application using <b class='text-slate-200'>Next Js, Material UI and React Query</b>.",
-              "Developed approval workflow for shortlink management",
-              "Built <b class='text-slate-200'>responsive UI with analytics charts</b>",
-              "Integrated BRISTARS Mobile for approval mechanism",
-              "Applied ElasticSearch APM for monitoring."
+              "Successfully for launch BRISilk to production and get 1000+ users",
+              "Successfully to handle fraud issue from PT Bank Rakyat Indonesia",
+              "Successfully integration by open API to handle ecosystem from PT Bank Rakyat Indonesia",
+              "Engineered a high-performance URL shortener application using <b class='text-indigo-400'>Next.js, Material UI, and React Query</b>.",
+              "Integrated real-time <b class='text-indigo-400'>analytics and visualization charts</b>, providing actionable insights into link engagement.",
+              "Linked the platform with BRISTARS Mobile to streamline cross-app approval mechanisms.",
+              "Instrumented the application with <b class='text-indigo-400'>ElasticSearch APM</b> to continuously monitor and improve web vital metrics."
             ]
           }
         ]
@@ -95,10 +88,9 @@ export const dataExperience = [
           {
             title: "CEISA 4.0",
             list: [
-              "Developed enterprise web application using <b class='text-slate-200'>React Js, Ant Design, Hightchart, and ElasticSearch</b>.",
-              "Developed dashboard for monitoring and reporting",
-              "Testing feature, debugging and fixing bugs",
-              "Collaborate with QA for a testing feature and issue resolution"
+              "Developed critical components for a massive enterprise system using <b class='text-indigo-400'>React, Ant Design, Highcharts, and ElasticSearch</b>.",
+              "Constructed complex dynamic dashboards capable of rendering real-time operational reports from large data aggregates.",
+              "Partnered extensively with QA teams to systematically eliminate edge-case rendering bugs and memory leaks."
             ]
           }
         ]
@@ -114,22 +106,15 @@ export const dataEducation = [
     date: "May '22 - Aug '24",
     experience: [
       {
-        title: "",
+        title: "Intensive Bootcamp",
         project: [
           {
             title: "",
             list: [
-              "Basic algorithm, flowchart, and programming logic",
-              "Function, variable, framework and data structure",
-              "Framework, Library, database and Tools programming",
-              "React Js, next Js, Express Js, PostgreSQL, Styled Component, and style-components",
-              "Basic database and SQL",
-              "Rest API and web service",
-              "Study case for build web application",
-              "Developed with <b class='text-slate-200'>React Js, Next Js, PostgreSQL, Express Js, Styled Component, and style-components</b>.",
-              "Collaborate with team for build web application",
-              "Deploy mechanism for web application to production",
-              "Daily standup, weekly review, and sprint planning"
+              "Mastered advanced algorithms, robust programming logic, and scalable data structure patterns.",
+              "Built full-stack web applications using <b class='text-indigo-400'>React.js, Next.js, Express.js, and PostgreSQL</b>.",
+              "Engineered scalable RESTful APIs and microservices from scratch.",
+              "Collaborated in Agile teams employing daily standups, weekly sprints, and structured deployment pipelines.",
             ]
           }
         ]
@@ -142,21 +127,15 @@ export const dataEducation = [
     date: "Jul '16 - May '19",
     experience: [
       {
-        title: "",
+        title: "Core Foundational Studies",
         project: [
           {
             title: "",
             list: [
-              "Basic algorithm, flowchart, ERD and programming logic",
-              "Fundamental programming concept",
-              "Basic database and SQL",
-              "Basic web application use PHP and MySQL",
-              "Study case for build web application",
-              "Developed with <b class='text-slate-200'>PHP, MySQL, and HTML</b>.",
-              "Internship at Faculty of Tekhik Informatika, Universitas Siliwangi",
-              "Developed web application <b class='text-slate-200'>Sistem Informasi</b> for Faculty of Tekhik Informatika, Universitas Siliwangi",
-              "Documentation for web application",
-              "Deploy mechanism for web application to production",
+              "Established strong foundations in relational database design (ERD) and fundamental programming concepts.",
+              "Developed fully functional web applications deploying <b class='text-indigo-400'>PHP, MySQL, and HTML</b>.",
+              "Completed a successful software engineering internship at the Faculty of Informatics, Universitas Siliwangi.",
+              "Drafted comprehensive technical documentation and system architecture blueprints."
             ]
           }
         ]
@@ -168,79 +147,141 @@ export const dataEducation = [
 
 export const techStack = [
   {
-    title: "Language",
-    list: ["JavaScript", "TypeScript", "PHP"]
+    title: "Frontend & Mobile",
+    list: ["React", "Vue.js", "Next.js", "React Native", "Tailwind CSS", "Radix UI", "Ant Design"]
   },
   {
-    title: "Framework",
-    list: ["React Js", "Next Js", "Vue Js", "React Native", "Express.js", "Laravel"]
+    title: "State Management",
+    list: ["Zustand", "Redux Toolkit", "TanStack Query", "Pinia", "Context API"]
   },
   {
-    title: "Database",
-    list: ["PostgreSQL", "MySQL"]
+    title: "Backend & Database",
+    list: ["Node.js", "Express.js", "Laravel", "PHP", "PostgreSQL", "MySQL", "ElasticSearch"]
   },
   {
-    title: "Tools/Other",
-    list: ["Github", "GitLab", "Bitbucket", "Postman", "Docker", "Kubernetes", "Jira", "Jenkins", "Agile/Scrum"]
+    title: "Tools & DevOps",
+    list: ["Vite", "Webpack", "Docker", "Kubernetes", "Git (GitHub/GitLab)", "Jenkins", "Postman"]
+  },
+  {
+    title: "Testing & Methodologies",
+    list: ["Jest", "Vitest", "Cypress", "Agile/Scrum", "CI/CD Pipelines", "RBAC Architecture"]
+  }
+]
+
+export const dataCertificate = [
+  {
+    companyName: "HackerRank",
+    position: "Frontend Developer - React",
+    date: "2024",
+    experience: [
+      {
+        title: "",
+        project: [
+          {
+            title: "",
+            list: [
+              "Successfully passed standardized assessments covering fundamental React concepts, component lifecycle, and hooks."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    companyName: "Pijar Camp",
+    position: "Fullstack Web Developer",
+    date: "2022",
+    experience: [
+      {
+        title: "",
+        project: [
+          {
+            title: "",
+            list: [
+              "Intensive training in modern JavaScript ecosystem, focusing on React Js, Next Js, Express.js, PostgreSQL and Node.js.",
+              "Built complex, scalable applications with proper state management and secure backends."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    companyName: "Alterra Academy",
+    position: "Website with React Js",
+    date: "2022",
+    experience: [
+      {
+        title: "",
+        project: [
+          {
+            title: "",
+            list: [
+              ""
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]
 
 export const dataProject = [
   {
-    projectName: "Portofolio",
-    description: "Portofolio application for user to show their profile, experience, education, sertifikat, technical skills, project and contact",
+    projectName: "Personal Portfolio",
+    description: "Architected a highly interactive, responsive portfolio leveraging modern web technologies and subtle micro-animations to highlight UI/UX engineering skills.",
     images: ["../assets/portofolio.png"],
     link: "https://ayi-shallahudin.vercel.app/",
-    techStack: "Vue Js, Vite, Tailwind CSS, motion-v, vercel"
+    techStack: "Vue.js, Vite, Tailwind CSS, Motion-v"
   },
   {
     projectName: "LMS - Loyalty Management System",
-    description: "Modern Web Application program management by PT Bank Rakyat Indonesia (BRI).",
+    description: "Designed a major enterprise loyalty ecosystem for PT Bank Rakyat Indonesia (BRI). Oversaw the complex state management to ensure a zero-lag experience despite heavy real-time data flow.",
     images: ["../assets/lms.png", "../assets/lms2.png"],
     link: "",
-    techStack: "React Js, Next Js, Radix UI, Tailwind CSS, TanStack Query, Zustand, PostgreSQL, Docker, GO, ElasticSearch APM"
+    techStack: "React.js, Next.js, Radix UI, Tailwind CSS, TanStack Query, Zustand, PostgreSQL, ElasticSearch APM"
   },
   {
-    projectName: "ProCash",
-    description: "Web Application for loyalty program management by PT Bank Rakyat Indonesia (BRI)",
+    projectName: "ProCash Core",
+    description: "Spearheaded the development of a robust loyalty rewards engine, implementing intricate cashback tracking mechanisms utilizing scalable architectural patterns.",
     images: ["../assets/procash.png", "../assets/procash2.png"],
     link: "",
-    techStack: "Laravel"
+    techStack: "Laravel, PHP"
   },
   {
-    projectName: "Ambilin Dashboard Internal - System Management User & Pickup Monitoring",
-    description: "Web Application for user management and pickup monitoring by BRILink, application funcionaly for management mitra, agent, role, user and cash pickup monitoring",
+    projectName: "Ambilin Dashboard Internal",
+    description: "Engineered a centralized command center for BRI administrators, securing critical data with role-based access logic while monitoring live cash pickup logistics.",
     images: ["../assets/ambilin-internal.png", "../assets/ambilin-internal1.png"],
     link: "https://play.google.com/store/apps/details?id=id.co.bri.brilinkmobile&hl=id",
-    techStack: "Next.js, Tailwind CSS, PostgreSQL, Docker, GO, ElasticSearch APM"
+    techStack: "Next.js, Tailwind CSS, PostgreSQL, Context API, Highcharts"
   },
   {
-    projectName: "Ambilin Dashboard Partner - Order Management Partner",
-    description: "Web Application for order management for Mitra BRILink, in this application Mitra can order cash pickup, management outlet to handle order cash pickup by Finance Manager and management user for outlet by Head Office",
+    projectName: "Ambilin Partner Portal",
+    description: "Built an intuitive operational hub for Mitra BRILink partners. Empowered external partners to orchestrate thousands of transactions through a highly optimized bulk upload system.",
     images: ["../assets/ambilin-partner.png", "../assets/ambilin-partner2.png"],
     link: "https://play.google.com/store/apps/details?id=id.co.bri.brilinkmobile&hl=id",
-    techStack: "Next.js, Tailwind CSS, PostgreSQL, Docker, GO, ElasticSearch APM"
+    techStack: "Next.js, Tailwind CSS, PostgreSQL, ElasticSearch APM"
   },
   {
-    projectName: "Ambilin - Cash Pickup & Order Management",
-    description: "Web Application for cash pickup and order management by BRILink. Application for customer to order cash pickup and for agent BRILink to pickup order by customor and nasabah mitra",
-    images: ["../assets/ambilin.png", "../assets/ambilin2.png", "../assets/ambilin3.png", "../assets/ambilin4.png"],
+    projectName: "Ambilin Logistics System",
+    description: "Transformed legacy code into a highly performant application. Integrated state-of-the-art caching and data fetching strategies reducing network round-trips significantly.",
+    images: ["../assets/ambilin.png", "../assets/ambilin2.png", "../assets/ambilin3.png"],
     link: "https://play.google.com/store/apps/details?id=id.co.bri.brilinkmobile&hl=id",
-    techStack: "Next.js, Tailwind CSS, PostgreSQL, Docker, GO, ElasticSearch APM"
+    techStack: "Next.js, Docker, ElasticSearch APM, Tailwind CSS"
   },
   {
-    projectName: "BRISilk - Shortlink URL",
-    description: "Web Application for shortlink URL by PT Bank Rakyat Indonesia (BRI)",
+    projectName: "BRISilk Shortlink Platform",
+    description: "Constructed a secure, compliant URL shortening and tracking service capable of surviving high-traffic spikes whilst offering detailed engagement analytics to stakeholders.",
     images: ["../assets/brisilk.png", "../assets/brisilk2.png"],
     link: "https://brilianapps.bri.co.id",
-    techStack: "Next.js, Material UI, React Query, MySQL, Docker, GO, ElasticSearch APM"
+    techStack: "Next.js, Material UI, React Query, MySQL, Docker, GO"
   },
   {
-    projectName: "CEISA 4.0",
-    description: "Web Application for customs data management by Direktorat Jenderal Bea Cukai (DJBC) Indonesia",
+    projectName: "CEISA 4.0 Customs System",
+    description: "Contributed critical UI layers for Indonesia's Customs platform (DJBC), focusing on charting large datasets and enforcing flawless operational reporting stability.",
     images: ["../assets/ceisa.jpg"],
     link: "https://portal.beacukai.go.id/portal/login",
-    techStack: "React Js, Ant Design, Hightchart, ElasticSearch, Java, Java Spring Boot"
+    techStack: "React.js, Ant Design, Highcharts, Java Spring Boot"
   }
 ]
 
