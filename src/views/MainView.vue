@@ -192,6 +192,7 @@ const iconMap = {
             :companyName="item.companyName"
             :position="item.position"
             :date="item.date"
+            :link="item.link"
             :experience="item.experience"
           />
         </div>

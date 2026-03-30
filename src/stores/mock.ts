@@ -147,24 +147,24 @@ export const dataEducation = [
 
 export const techStack = [
   {
-    title: "Frontend & Mobile",
-    list: ["React", "Vue.js", "Next.js", "React Native", "Tailwind CSS", "Radix UI", "Ant Design"]
+    title: "Languages",
+    list: ["JavaScript", "TypeScript", "PHP"]
+  },
+  {
+    title: "Frameworks",
+    list: ["React.js", "Next.js", "Vue.js", "React Native", "Laravel", "Express.js"]
   },
   {
     title: "State Management",
-    list: ["Zustand", "Redux Toolkit", "TanStack Query", "Pinia", "Context API"]
+    list: ["Zustand", "TanStack Query", "Context API"]
   },
   {
-    title: "Backend & Database",
-    list: ["Node.js", "Express.js", "Laravel", "PHP", "PostgreSQL", "MySQL", "ElasticSearch"]
+    title: "Database",
+    list: ["PostgreSQL", "MySQL"]
   },
   {
-    title: "Tools & DevOps",
-    list: ["Vite", "Webpack", "Docker", "Kubernetes", "Git (GitHub/GitLab)", "Jenkins", "Postman"]
-  },
-  {
-    title: "Testing & Methodologies",
-    list: ["Jest", "Vitest", "Cypress", "Agile/Scrum", "CI/CD Pipelines", "RBAC Architecture"]
+    title: "Tools & Others",
+    list: ["Vite", "Webpack", "Docker", "Kubernetes", "Git (GitHub/GitLab)", "Bitbucket", "Jenkins", "Postman", "Swagger", "Agile/Scrum", "Waterfall", "RBAC Architecture"]
   }
 ]
 
@@ -173,6 +173,7 @@ export const dataCertificate = [
     companyName: "HackerRank",
     position: "Frontend Developer - React",
     date: "2024",
+    link: "https://www.hackerrank.com/certificates/iframe/654880b2d191",
     experience: [
       {
         title: "",
@@ -191,6 +192,7 @@ export const dataCertificate = [
     companyName: "Pijar Camp",
     position: "Fullstack Web Developer",
     date: "2022",
+    link: "https://drive.google.com/file/d/1dRBtkb9Es3wgC5NEYMqQuXpDtKehfs4a/view?usp=drivesdk",
     experience: [
       {
         title: "",
@@ -210,6 +212,7 @@ export const dataCertificate = [
     companyName: "Alterra Academy",
     position: "Website with React Js",
     date: "2022",
+    link: "https://drive.google.com/file/d/1U_6MAcKTQTdkpPBTulAoKhhjF-V2Jo2F/view?usp=drivesdk",
     experience: [
       {
         title: "",
@@ -217,7 +220,7 @@ export const dataCertificate = [
           {
             title: "",
             list: [
-              ""
+              "Successfully passed standardized assessments covering fundamental React concepts, component lifecycle, and hooks."
             ]
           }
         ]
