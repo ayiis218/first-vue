@@ -181,7 +181,7 @@ const iconMap = {
         id="sertifikat"
       >
         <div class="flex items-center gap-4">
-          <h3 class="text-2xl font-bold text-white tracking-wide">Sertifikat</h3>
+          <h3 class="text-2xl font-bold text-white tracking-wide">Certificate</h3>
           <div class="flex-1 h-px bg-slate-800"></div>
         </div>
 
