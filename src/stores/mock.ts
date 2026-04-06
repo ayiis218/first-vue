@@ -180,7 +180,7 @@ export const dataCertificate = [
   {
     companyName: "HackerRank",
     position: "Frontend Developer - React",
-    date: "2024",
+    date: "July 2025",
     link: "https://www.hackerrank.com/certificates/iframe/654880b2d191",
     experience: [
       {
@@ -199,7 +199,7 @@ export const dataCertificate = [
   {
     companyName: "Pijar Camp",
     position: "Fullstack Web Developer",
-    date: "2022",
+    date: "May '22 - Sept '22",
     link: "https://drive.google.com/file/d/1dRBtkb9Es3wgC5NEYMqQuXpDtKehfs4a/view?usp=drivesdk",
     experience: [
       {
@@ -219,7 +219,7 @@ export const dataCertificate = [
   {
     companyName: "Alterra Academy",
     position: "Website with React Js",
-    date: "2022",
+    date: "Apr '22",
     link: "https://drive.google.com/file/d/1U_6MAcKTQTdkpPBTulAoKhhjF-V2Jo2F/view?usp=drivesdk",
     experience: [
       {
