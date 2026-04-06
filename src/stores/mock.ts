@@ -172,7 +172,7 @@ export const techStack = [
   },
   {
     title: "Tools & Others",
-    list: ["Vite", "Webpack", "Docker", "Kubernetes", "Git (GitHub/GitLab)", "Bitbucket", "Jenkins", "Postman", "Swagger", "Agile/Scrum", "Waterfall", "RBAC Architecture"]
+    list: ["Docker", "Kubernetes", "Git (GitHub/GitLab)", "Bitbucket", "Jenkins", "Postman", "Swagger", "Agile/Scrum"]
   }
 ]
 
