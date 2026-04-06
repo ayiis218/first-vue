@@ -7,6 +7,7 @@ import { ref } from 'vue';
 import { SuArrowUpCircle, ThAlignJustify, SuClose, AkGithubFill, AkLinkedinBoxFill, AkInstagramFill, FeMail, AkWhatsappFill } from '@kalimahapps/vue-icons';
 import { dataExperience, dataEducation, techStack, dataProject, contact, dataCertificate } from '@/stores/mock';
 import { useScreenSize } from '@/helper/screen.size';
+import cv from '@/assets/CV.pdf';
 
 const { isMobile } = useScreenSize();
 const isNavOpen = ref(false);
@@ -56,6 +57,10 @@ const iconMap = {
   whatsapp: AkWhatsappFill,
 }
 
+const openCv = () => {
+  window.open(cv, '_blank')
+}
+
 </script>
 
 <template>
@@ -100,15 +105,20 @@ const iconMap = {
     <motion.header
       :initial="fadeInUp.initial"
       :animate="fadeInUp.enter"
-      class="max-w-4xl mx-auto pt-24 pb-16 px-6 sm:px-10 flex flex-col md:flex-row items-center gap-10"
+      class="max-w-4xl mx-auto pt-24 pb-5 px-6 sm:px-10 flex flex-col md:flex-row items-center gap-10"
       id="profile"
     >
+    <div class="flex flex-col gap-4 items-center">
       <div class="relative group">
         <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
         <div class="relative w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden border-2 border-slate-800 shadow-2xl">
           <img src="../assets/profile.png" alt="Ayi Solahudin Profile" class="w-full h-full object-cover scale-105 group-hover:scale-110 transition duration-700 ease-in-out" />
         </div>
       </div>
+      <div class="flex-1 text-center">
+        <button @click="openCv" class="border border-indigo-400 px-4 py-1 rounded-md text-indigo-400 hover:bg-indigo-400 hover:text-white transition-colors duration-300 font-bold text-base">Detail CV</button>
+      </div>
+    </div>
       
       <div class="flex-1 text-center md:text-left space-y-4">
         <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-sm">
