@@ -27,28 +27,30 @@ export const dataExperience = [
           {
             title: "Ambilin Dashboard Internal - Agent Management & Pickup Monitoring",
             list: [
-              "Successfully launched the Ambilin Dashboard Internal, a comprehensive platform for agent management and pickup monitoring.",
+              "Successfully launched the Ambilin Dashboard Internal, a comprehensive platform for agent management, partner management and pickup monitoring.",
               "Successfully for improve SonarQube dupplicate code from 15% to 0% and code smell from 15% to 0%",
-              "Drove the frontend initiative using <b class='text-indigo-400'>Next.js and Tailwind CSS</b> to build real-time monitoring maps and complex data grids.",
               "Collaborated closely with Product Owners and UI/UX designers to translate complex business logic into intuitive operational dashboards.",
-              "Architected a scalable <b class='text-indigo-400'>Role-Based Access Control (RBAC)</b> system tailored for multi-tier organizational structures.",
               "Executed targeted <b class='text-indigo-400'>performance optimizations</b> to ensure lag-free monitoring of thousands of concurrent cash pickup transactions.",
+              "Drove the frontend initiative using <b class='text-indigo-400'>Next.js and Tailwind CSS</b> to build real-time monitoring maps and complex data grids.",
+              "Architected a scalable <b class='text-indigo-400'>Role-Based Access Control (RBAC)</b> system tailored for multi-tier organizational structures.",
               "Authored comprehensive SIT/UAT documentation and established standard deployment pipelines.",
             ]
           },
           {
             title: "Ambilin Dashboard Partner - Partner Order Management",
             list: [
+              "Successfully launched the Ambilin Dashboard Partner and used by Indomaret (2000+ outlets), Alfamidi, Haus, Kopi Jago, Pertamina, etc for order management",
               "Successfully to handle problem order created from partner to agent",
               "Successfully for improve SonarQube dupplicate code from 18% to 0% and code smell from 10% to 0%",
-              "Built an integrated partner portal with <b class='text-indigo-400'>Next.js</b>, streamlining outlet management and order workflows.",
               "Architected a heavily-optimized <b class='text-indigo-400'>bulk upload mechanism</b>, enabling partners to process thousands of records in seconds with real-time validation feedback.",
-              "Significantly optimized the order management flow, <b class='text-indigo-400'>reducing time-to-completion by 40%</b> for primary user journeys."
+              "Significantly optimized the order management flow, <b class='text-indigo-400'>reducing time-to-completion by 40%</b> for primary user journeys.",
+              "Built an integrated partner portal with <b class='text-indigo-400'>Next.js</b>, streamlining outlet management and order workflows.",
             ]
           },
           {
             title: "Ambilin - Cash Pickup & Order System",
             list: [
+              "Used by 1000+ agents for cash pickup",
               "Successfully for optimization performance and maintenance existing features",
               "Succesfully to handle problem issue about pickup order from agent",
               "Spearheaded major refactoring of legacy codebases, significantly boosting readability, maintainability, and rendering performance.",
@@ -111,9 +113,13 @@ export const dataEducation = [
           {
             title: "",
             list: [
-              "Mastered advanced algorithms, robust programming logic, and scalable data structure patterns.",
-              "Built full-stack web applications using <b class='text-indigo-400'>React.js, Next.js, Express.js, and PostgreSQL</b>.",
-              "Engineered scalable RESTful APIs and microservices from scratch.",
+              "Successfully to build full-stack web applications using <b class='text-indigo-400'>React.js, Next.js, Express.js, and PostgreSQL</b>.",
+              "Successfully to build RESTful APIs and microservices from scratch.",
+              "Successfully developed a responsive and user-friendly web application using <b class='text-indigo-400'>Next.js and Styled Components</b>.",
+              "Successfully to build a API Gateway and database using <b class='text-indigo-400'>Express.js and PostgreSQL</b>.",
+              "Algorithms, robust programming logic, flowchart, and scalable data structure patterns.",
+              "Learned and applied <b class='text-indigo-400'>Framework (Next.js, React.js, Express.js, PostgreSQL)</b> for build full-stack web applications.",
+              "Learned and applied <b class='text-indigo-400'>Agile/Scrum</b> methodologies to manage project workflows and deliverables.",
               "Collaborated in Agile teams employing daily standups, weekly sprints, and structured deployment pipelines.",
             ]
           }
@@ -132,6 +138,8 @@ export const dataEducation = [
           {
             title: "",
             list: [
+              "Learned fundamental programming logic, flowchart, and scalable data structure patterns.",
+              "Learned and applied <b class='text-indigo-400'>Framework (PHP, MySQL, and HTML)</b> for build full-stack web applications.",
               "Established strong foundations in relational database design (ERD) and fundamental programming concepts.",
               "Developed fully functional web applications deploying <b class='text-indigo-400'>PHP, MySQL, and HTML</b>.",
               "Completed a successful software engineering internship at the Faculty of Informatics, Universitas Siliwangi.",
@@ -306,7 +314,7 @@ export const contact = [
   },
   {
     name: "Email",
-    url: "shallahudin.ayi@gmail.com",
+    url: "mailto:shallahudin.ayi@gmail.com",
     icon: "email"
   },
   {
