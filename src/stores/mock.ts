@@ -180,7 +180,7 @@ export const dataCertificate = [
   {
     companyName: "HackerRank",
     position: "Frontend Developer - React",
-    date: "July 2025",
+    date: "Jul '25",
     link: "https://www.hackerrank.com/certificates/iframe/654880b2d191",
     experience: [
       {
