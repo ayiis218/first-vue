@@ -77,7 +77,7 @@ const openCv = () => {
           <button @click="onScrollTo('profile')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Profile</button>
           <button @click="onScrollTo('experience')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Experience</button>
           <button @click="onScrollTo('education')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Education</button>
-          <button @click="onScrollTo('sertifikat')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Sertifikat</button>
+          <button @click="onScrollTo('sertifikat')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Certificate</button>
           <button @click="onScrollTo('technical-skills')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Technical Skills</button>
           <button @click="onScrollTo('project')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Project</button>
           <button @click="onScrollTo('contact')" class="text-slate-400 hover:text-white transition-colors duration-300">Contact</button>
@@ -94,7 +94,7 @@ const openCv = () => {
         <button @click="onScrollTo('profile')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Profile</button>
         <button @click="onScrollTo('experience')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Experience</button>
         <button @click="onScrollTo('education')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Education</button>
-        <button @click="onScrollTo('sertifikat')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Sertifikat</button>
+        <button @click="onScrollTo('sertifikat')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Certificate</button>
         <button @click="onScrollTo('technical-skills')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Technical Skills</button>
         <button @click="onScrollTo('project')" class="text-base text-slate-400 hover:text-white transition-colors duration-300">Project</button>
         <button @click="onScrollTo('contact')" class="text-slate-400 hover:text-white transition-colors duration-300">Contact</button>
