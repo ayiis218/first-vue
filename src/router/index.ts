@@ -8,13 +8,19 @@ import LoginView from '@/views/LoginView.vue'
 import RegisterView from '@/views/RegisterView.vue'
 import MainLayout from '@/layouts/MainLayout.vue'
 import AuthLayout from '@/layouts/AuthLayout.vue'
+import NotFoundView from '@/views/404.vue'
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
+      path: '/404',
+      name: '404',
+      component: NotFoundView
+    },
+    {
       path: '/auth',
-      component: MainView,
+      component: MainLayout,
       children: [
         { path: '/profile', name: 'profile', component: ProfileView },
         { path: '/about', name: 'about', component: AboutView },
@@ -31,6 +37,7 @@ const router = createRouter({
         { path: '/register', name: 'register', component: RegisterView },
       ],
     },
+    { path: '/:pathMatch(.*)*', redirect: '/404' },
   ],
 })
 

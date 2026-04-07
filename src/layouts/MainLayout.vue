@@ -1,8 +1,12 @@
 <script lang="ts" setup>
 import { UserIcon } from '@heroicons/vue/24/outline';
-import { RouterView } from 'vue-router'
+import { RouterView, useRouter } from 'vue-router'
+import { useAuthStore } from '@/stores/auth'
 
-const session = false
+const isAuthenticated = useAuthStore().isAuthenticated
+const router = useRouter()
+if(!isAuthenticated) router.push('/login')
+
 </script>
 
 <template>
@@ -13,7 +17,7 @@ const session = false
       <RouterLink to="/anime" class="text-black font-normal">Anime</RouterLink>
       <RouterLink to="/otp" class="text-black font-normal">OTP</RouterLink>
     </nav>
-    <div v-if="session" class="flex flex-row justify-end gap-1 my-2 mr-4">
+    <div v-if="isAuthenticated" class="flex flex-row justify-end gap-1 my-2 mr-4">
       <RouterLink
         to="/login"
         class="w-[80px] text-sm text-white font-normal border bg-blue-500 p-2 hover:bg-blue-400 rounded-md text-center"

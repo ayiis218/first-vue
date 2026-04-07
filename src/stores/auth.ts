@@ -1,7 +1,9 @@
-// export const useAuthStore = async () => {
-//   const token = await cookieStore.get('token')
+import Cookies from "js-cookie";
 
-//   return {
-//     isAuthenticated: token,
-//   }
-// }
+export const useAuthStore = () => {
+  const token = Cookies.get("token");
+
+  return {
+    isAuthenticated: token,
+  }
+}
