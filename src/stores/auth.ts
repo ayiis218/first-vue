@@ -1,9 +1,21 @@
 import Cookies from "js-cookie";
 
 export const useAuthStore = () => {
-  const token = Cookies.get("token");
+  const setToken = (token: string) => {
+    Cookies.set("token", token)
+  }
+
+  const getToken = () => {
+    return Cookies.get("token")
+  }
+
+  const removeToken = () => {
+    Cookies.remove("token")
+  }
 
   return {
-    isAuthenticated: token,
+    setToken,
+    getToken,
+    removeToken,
   }
 }

@@ -1,12 +1,13 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRouter } from 'vue-router'
 // import { signInWithGoogle } from '@/services/google'
 import { EyeIcon, EyeSlashIcon } from '@heroicons/vue/24/outline'
-import { API_Login } from '@/services/auth'
+
+const router = useRouter()
 
 const form = ref({
-  username: '',
+  username:'',
   email: '',
   password: '',
 })
@@ -19,13 +20,9 @@ const isShow = (field: keyof typeof show.value) => {
   show.value[field] = !show.value[field]
 }
 
-const onLogin = async () => {
-  // const result = await API_Login(form.value)
-  // if (result.status === 200) {
-  //   window.location.href = "/dashboard"
-  // }else {
-  //   console.log("Login failed")
-  // }
+const onLogin = () => {
+  localStorage.setItem("token", "tokennnnnnnnnnnnn")
+  router.push("/profile")
 }
 
 // const useGoogleLogin = async () => await signInWithGoogle()
@@ -55,6 +52,7 @@ const useAppleLogin = () => {
           <Input
             type="email"
             placeholder="Email"
+            name="email"
             v-model="form.email"
             class="w-full border border-gray-300 p-3 rounded-md text-black"
             required
@@ -63,6 +61,7 @@ const useAppleLogin = () => {
             <Input
               :type="show.password ? 'text' : 'password'"
               placeholder="Password"
+              name="password"
               v-model="form.password"
               class="bg-transparent outline-none flex-1 text-black"
               required
