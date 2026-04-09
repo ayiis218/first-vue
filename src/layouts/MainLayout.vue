@@ -2,22 +2,25 @@
 import { UserIcon } from '@heroicons/vue/24/outline'
 import { useRouter } from 'vue-router'
 import { useAuth } from '@/stores/auth'
-import { ref, watchEffect } from 'vue'
+import { reactive, watchEffect } from 'vue'
+
 const router = useRouter()
 const { logout, session: user } = useAuth()
 
-const isOpen = ref({
+const isOpen = reactive({
   menu: false,
+  avatar: ''
 })
 
 watchEffect(() => {
   if (!user.value) {
     router.replace('/login')
   }
+  isOpen.avatar = localStorage.getItem("avatar") ?? ""
 })
 
 const onToggle = () => {
-  isOpen.value.menu = !isOpen.value.menu
+  isOpen.menu = !isOpen.menu
 }
 
 const onLogout = () => {
@@ -51,9 +54,14 @@ const onLogout = () => {
         </div>
         <div v-else class="relative">
           <button 
-            class="border-2 border-indigo-500 rounded-full p-1 cursor-pointer text-indigo-500 hover:bg-indigo-500 hover:text-white transition-all duration-300 hover:scale-95" 
+            class="border-2 border-indigo-500 rounded-full cursor-pointer text-indigo-500 hover:bg-indigo-500 hover:text-white transition-all duration-300 hover:scale-95" 
             @click="onToggle()">
-            <UserIcon class="w-6 h-6" />
+            <div v-if="!isOpen.avatar" class="flex flex-col transition-all duration-300 hover:scale-95">
+              <UserIcon class="w-6 h-6 m-1" />
+            </div>
+            <div v-else class="flex flex-col transition-all duration-300 hover:scale-95">
+              <img :src="isOpen.avatar" alt="User Profile" class="h-8 w-8 object-cover rounded-full" />
+            </div>
           </button>
           <div v-if="isOpen.menu" class="absolute top-16 right-0 w-48 py-2 px-3 bg-white rounded-md shadow-lg z-20">
             <div class="flex flex-col transition-all duration-300 hover:scale-95">
