@@ -55,17 +55,17 @@ const useAppleLogin = () => {
     </div>
     <div class="w-full h-full flex flex-col justify-center items-center bg-blue-300">
       <div class="w-[60%] flex flex-col gap-3 p-3">
-        <h1 class="text-2xl font-bold text-center text-white mb-4">Form Login</h1>
+        <h1 class="text-4xl font-bold text-center text-white mb-4">Login</h1>
         <form @submit.prevent="onLogin" class="w-full flex flex-col gap-3">
           <input
             type="email"
             placeholder="Email"
             name="email"
             v-model="form.email"
-            class="w-full border border-gray-300 p-3 rounded-md text-black"
+            class="w-full border border-gray-300 p-3 rounded-md text-black hover:scale-105"
             required
           />
-            <div class="w-full flex items-center bg-white gap-3 border border-gray-300 p-3 rounded-md">
+          <div class="w-full flex items-center bg-white gap-3 border border-gray-300 p-3 rounded-md hover:scale-105">
             <input
               :type="show.password ? 'text' : 'password'"
               placeholder="Password"
@@ -81,7 +81,7 @@ const useAppleLogin = () => {
           </div>
           <Button
             type="submit"
-            class="w-full bg-blue-500 rounded-md p-3 text-white hover:bg-blue-400 mt-3 "
+            class="w-full bg-blue-500 rounded-md p-3 text-white hover:bg-blue-400 mt-3 hover:scale-105"
           >
             Login
           </Button>
@@ -99,7 +99,7 @@ const useAppleLogin = () => {
               alt="google"
               width="25px"
               height="25px"
-              class="object-contain"
+              class="object-contain hover:scale-125"
             />
           </div>
           <div class="cursor-pointer" @click="useFacebookLogin()">
@@ -108,7 +108,7 @@ const useAppleLogin = () => {
               alt="facebook"
               width="25px"
               height="25px"
-              class="object-contain"
+              class="object-contain hover:scale-125"
             />
           </div>
           <div class="cursor-pointer" @click="useAppleLogin()">
@@ -117,7 +117,7 @@ const useAppleLogin = () => {
               alt="apple"
               width="20px"
               height="20px"
-              class="object-contain"
+              class="object-contain hover:scale-125"
             />
           </div>
         </div>
