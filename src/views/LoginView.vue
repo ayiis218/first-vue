@@ -1,13 +1,12 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { reactive, ref } from 'vue'
 import { RouterLink, useRouter } from 'vue-router'
-// import { signInWithGoogle } from '@/services/google'
 import { EyeIcon, EyeSlashIcon } from '@heroicons/vue/24/outline'
+import { GuestAuth } from '@/services/auth/simple-auth'
 
 const router = useRouter()
 
-const form = ref({
-  username:'',
+const form = reactive({
   email: '',
   password: '',
 })
@@ -20,9 +19,18 @@ const isShow = (field: keyof typeof show.value) => {
   show.value[field] = !show.value[field]
 }
 
-const onLogin = () => {
-  localStorage.setItem("token", "tokennnnnnnnnnnnn")
-  router.push("/profile")
+const onLogin = async () => {
+  const payload = {
+    email: form.email,
+    password: form.password,
+  }
+
+  try {
+    await GuestAuth(payload)
+    router.push("/profile")
+  } catch (err) {
+    console.error(err)
+  }
 }
 
 // const useGoogleLogin = async () => await signInWithGoogle()
@@ -49,7 +57,7 @@ const useAppleLogin = () => {
       <div class="w-[60%] flex flex-col gap-3 p-3">
         <h1 class="text-2xl font-bold text-center text-white mb-4">Form Login</h1>
         <form @submit.prevent="onLogin" class="w-full flex flex-col gap-3">
-          <Input
+          <input
             type="email"
             placeholder="Email"
             name="email"
@@ -58,7 +66,7 @@ const useAppleLogin = () => {
             required
           />
             <div class="w-full flex items-center bg-white gap-3 border border-gray-300 p-3 rounded-md">
-            <Input
+            <input
               :type="show.password ? 'text' : 'password'"
               placeholder="Password"
               name="password"
