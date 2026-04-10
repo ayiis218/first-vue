@@ -242,7 +242,7 @@ export const dataProject = [
     projectName: "Personal Portfolio",
     description: "Architected a highly interactive, responsive portfolio leveraging modern web technologies and subtle micro-animations to highlight UI/UX engineering skills.",
     images: ["../assets/portofolio.png"],
-    link: "https://ayi-shallahudin.vercel.app/",
+    link: "https://ayi-shallahudin.vercel.app/login",
     techStack: "Vue.js, Vite, Tailwind CSS, Motion-v"
   },
   {

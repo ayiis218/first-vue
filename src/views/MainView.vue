@@ -269,16 +269,22 @@ const openCv = () => {
       id="contact"
     >
       <div class="pt-8 border-t border-slate-800 flex flex-col items-center gap-4">
-        <p class="text-sm text-slate-500 font-light">
+        <p class="text-sm text-slate-300 font-light hover:text-indigo-500 hover:transition-colors hover:duration-300 hover:scale-105">
           Ayi Solahudin - Frontend Developer
         </p>
       </div>
       <div class="flex flex-row gap-2 justify-center items-center">
         <div v-for="(item, index) in contact" :key="index">
-          <a :href="item.url" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500 hover:transition-colors hover:duration-300 hover:scale-105">
-            <component :is="iconMap[item.icon as keyof typeof iconMap]" class="w-6 h-6" />
+          <a :href="item.url" target="_blank" rel="noopener noreferrer">
+            <component :is="iconMap[item.icon as keyof typeof iconMap]" class="w-6 h-6 hover:text-indigo-500 hover:transition-colors hover:duration-300 hover:scale-125" />
           </a>
         </div>
+      </div>
+
+      <div class="flex flex-row gap-2 justify-center items-center mt-4">
+        <h1 class="text-sm font-light text-slate-500 hover:text-indigo-500 hover:transition-colors hover:duration-300 hover:scale-105">
+          Build with Vue Js, Vite, Tailwind Css, and Motion-V
+        </h1>
       </div>
     </motion.footer>
 
