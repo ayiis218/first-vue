@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { reactive, ref } from 'vue'
+import { reactive, ref, watchEffect } from 'vue'
 import { RouterLink, useRouter } from 'vue-router'
 import { EyeIcon, EyeSlashIcon } from '@heroicons/vue/24/outline'
 import { GuestAuth, Login } from '@/services/auth/simple-auth'
@@ -57,6 +57,14 @@ const useAppleLogin = () => {
   console.log('Apple login')
 }
 
+watchEffect(() => {
+  if(form.textAlert) {
+    setTimeout(() => {
+      form.textAlert = ''
+    }, 3000)
+  }
+})
+
 </script>
 
 <template>
@@ -66,8 +74,8 @@ const useAppleLogin = () => {
       <ClCloseMd @click="form.textAlert = ''" class="cursor-pointer hover:scale-125"/>
     </b-alert>
   </div>
-  <div class="h-screen w-full bg-slate-950 flex flex-col md:flex-row text-slate-200 selection:bg-indigo-500/30 font-sans">
-    <div class="w-full h-full flex flex-col justify-center items-center">
+  <div class="h-screen w-full bg-slate-950 flex flex-col xl:flex-row text-slate-200 selection:bg-indigo-500/30 font-sans">
+    <div class="w-full h-full flex flex-col justify-center items-center hidden xl:block">
       <img src="../assets/login.jpg" alt="login" class="w-full h-full object-cover"/>
     </div>
     <div class="w-full h-full flex flex-col justify-center items-center bg-blue-300">
@@ -82,33 +90,33 @@ const useAppleLogin = () => {
             class="w-full border border-gray-300 p-3 rounded-md text-black hover:scale-105"
             required
           />
-          <div class="w-full flex items-center bg-white gap-3 border border-gray-300 p-3 rounded-md hover:scale-105">
+          <div class="w-full flex flex-row items-center bg-white gap-3 border border-gray-300 p-3 rounded-md hover:scale-105">
             <input
               :type="show.password ? 'text' : 'password'"
               placeholder="Password"
               name="password"
               v-model="form.password"
-              class="bg-transparent outline-none flex-1 text-black"
+              class="w-[80%] bg-transparent outline-none flex-1 text-black"
               required
             />
             <span class="cursor-pointer" @click="isShow('password')">
-                <EyeIcon v-if="!show.password" class="w-5 h-5 text-black"/>
-                <EyeSlashIcon v-else class="w-5 h-5 text-black"/>
+              <EyeIcon v-if="!show.password" class="w-5 h-5 text-black"/>
+              <EyeSlashIcon v-else class="w-5 h-5 text-black"/>
             </span>
           </div>
           <Button
             type="submit"
-            class="w-full bg-blue-500 rounded-md p-3 text-white hover:bg-blue-400 mt-3 hover:scale-105"
+            class="w-full bg-blue-500 rounded-md p-3 text-white hover:bg-blue-400 mt-3 hover:scale-105 font-bold"
           >
             Login
           </Button>
-          <Button @click="onGuestAuth" class="w-full bg-blue-500 rounded-md p-3 text-white hover:bg-blue-400 mt-3 hover:scale-105">
+          <Button @click="onGuestAuth" class="w-full border border-blue-500 bg-white font-bold rounded-md p-3 text-blue-500 hover:bg-blue-500 hover:text-white hover:scale-105">
             Login as Guest
           </Button>
         </form>
         <div class="flex flex-row justify-center gap-1">
-          <h5 class="text-center font-medium text-white">Don't have an account?</h5>
-          <RouterLink to="/register" class="text-center text-blue-700 hover:underline">
+          <h5 class="text-center font-medium text-white text-xs md:text-base">Don't have an account?</h5>
+          <RouterLink to="/register" class="text-center font-medium text-blue-700 hover:underline text-xs md:text-base">
             Register
           </RouterLink>
         </div>
