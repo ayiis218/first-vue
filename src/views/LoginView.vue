@@ -2,13 +2,15 @@
 import { reactive, ref } from 'vue'
 import { RouterLink, useRouter } from 'vue-router'
 import { EyeIcon, EyeSlashIcon } from '@heroicons/vue/24/outline'
-import { GuestAuth } from '@/services/auth/simple-auth'
+import { GuestAuth, Login } from '@/services/auth/simple-auth'
+import { ClCloseMd } from '@kalimahapps/vue-icons'
 
 const router = useRouter()
 
 const form = reactive({
   email: '',
   password: '',
+  textAlert: '',
 })
 
 const show = ref({
@@ -20,6 +22,13 @@ const isShow = (field: keyof typeof show.value) => {
 }
 
 const onLogin = async () => {
+  const result = await Login(form)
+  if (result !== "Login berhasil") return form.textAlert = result
+  form.textAlert = result
+  router.push("/profile")
+}
+
+const onGuestAuth = async () => {
   const payload = {
     email: form.email,
     password: form.password,
@@ -27,8 +36,10 @@ const onLogin = async () => {
 
   try {
     await GuestAuth(payload)
+    form.textAlert = "Login berhasil"
     router.push("/profile")
   } catch (err) {
+    form.textAlert = "Login gagal"
     console.error(err)
   }
 }
@@ -49,7 +60,20 @@ const useAppleLogin = () => {
 </script>
 
 <template>
-  <div class="h-screen w-full bg-slate-950 flex flex-row text-slate-200 selection:bg-indigo-500/30 font-sans">
+  <div class="relative">
+    <b-alert 
+      v-if="form.textAlert" 
+      class="absolute top-5 left-1/2 -translate-x-1/2 z-50 text-white rounded-md py-2 px-3 flex flex-row items-center gap-2 hover:scale-105 transition-all duration-300"
+      :class="{
+        'bg-red-400': form.textAlert === 'akun tidak terdaftar' || form.textAlert === 'password salah',
+        'bg-green-400': form.textAlert === 'Login berhasil',
+      }"
+    >
+      {{ form.textAlert }}
+      <ClCloseMd @click="form.textAlert = ''" class="cursor-pointer hover:scale-125"/>
+    </b-alert>
+  </div>
+  <div class="h-screen w-full bg-slate-950 flex flex-col md:flex-row text-slate-200 selection:bg-indigo-500/30 font-sans">
     <div class="w-full h-full flex flex-col justify-center items-center">
       <img src="../assets/login.jpg" alt="login" class="w-full h-full object-cover"/>
     </div>
@@ -84,6 +108,9 @@ const useAppleLogin = () => {
             class="w-full bg-blue-500 rounded-md p-3 text-white hover:bg-blue-400 mt-3 hover:scale-105"
           >
             Login
+          </Button>
+          <Button @click="onGuestAuth" class="w-full bg-blue-500 rounded-md p-3 text-white hover:bg-blue-400 mt-3 hover:scale-105">
+            Login as Guest
           </Button>
         </form>
         <div class="flex flex-row justify-center gap-1">

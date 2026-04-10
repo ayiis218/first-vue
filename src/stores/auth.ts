@@ -64,6 +64,12 @@ interface ISession {
   token: string
 }
 
+interface IRegister {
+  username: string
+  email: string
+  password: string
+}
+
 export function useAuth() {
   const session = useLocalStorage<ISession>("session", null)
 
@@ -80,5 +86,19 @@ export function useAuth() {
     isAuthenticated: computed(() => !!session.value),
     login,
     logout
+  }
+}
+
+export function useRegister() {
+  const akun = useLocalStorage<IRegister>("register", null)
+
+  const register = (data: IRegister) => {
+    akun.value = data
+  }
+
+  return {
+    akun,
+    isRegistered: computed(() => !!akun.value),
+    register,
   }
 }

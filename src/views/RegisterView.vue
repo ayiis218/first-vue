@@ -1,9 +1,12 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
-import { RouterLink } from 'vue-router'
+import { reactive, ref } from 'vue'
+import { RouterLink, useRouter } from 'vue-router'
 import { EyeIcon, EyeSlashIcon } from '@heroicons/vue/24/outline'
+import { SimpleRegister } from '@/services/auth/simple-register'
 
-const form = ref({
+const router = useRouter()
+
+const form = reactive({
   username: '',
   email: '',
   password: '',
@@ -19,15 +22,14 @@ const isShow = (key: keyof typeof show.value) => {
   show.value[key] = !show.value[key]
 }
 
-console.log(form.value)
-
 const onRegister = () => {
-  console.log('Register', form.value)
+  SimpleRegister(form)
+  router.push("/login")
 }
 </script>
 
 <template>
-  <div class="h-screen w-full bg-slate-950 flex flex-row text-slate-200 selection:bg-indigo-500/30 font-sans">
+  <div class="h-screen w-full bg-slate-950 flex flex-col md:flex-row text-slate-200 selection:bg-indigo-500/30 font-sans">
     <div class="w-full h-full flex flex-col justify-center items-center">
       <img src="../assets/signup.jpg" alt="signup" class="w-full h-full object-cover"/>
     </div>
@@ -35,14 +37,14 @@ const onRegister = () => {
       <div class="w-[60%] flex flex-col gap-3 p-3">
         <h1 class="text-4xl font-bold text-center text-white mb-4">Register</h1>
         <form @submit.prevent="onRegister" class="w-full flex flex-col gap-3">
-            <Input
+            <input
               type="text"
               placeholder="Full Name"
               v-model="form.username"
               class="w-full border border-gray-300 p-3 rounded-md text-black hover:scale-105"
               required
             />
-            <Input
+            <input
               type="email"
               placeholder="Email"
               v-model="form.email"
@@ -67,7 +69,7 @@ const onRegister = () => {
               </span>
             </div>
             <div class=" w-full flex items-center bg-white gap-3 border border-gray-300 p-3 rounded-md text-black hover:scale-105">
-              <Input
+              <input
                 :type="show.confirmPassword ? 'text' : 'password'"
                 placeholder="Confirm Password"
                 v-model="form.confirm_password"
