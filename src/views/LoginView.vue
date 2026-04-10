@@ -61,14 +61,7 @@ const useAppleLogin = () => {
 
 <template>
   <div class="relative">
-    <b-alert 
-      v-if="form.textAlert" 
-      class="absolute top-5 left-1/2 -translate-x-1/2 z-50 text-white rounded-md py-2 px-3 flex flex-row items-center gap-2 hover:scale-105 transition-all duration-300"
-      :class="{
-        'bg-red-400': form.textAlert === 'akun tidak terdaftar' || form.textAlert === 'password salah',
-        'bg-green-400': form.textAlert === 'Login berhasil',
-      }"
-    >
+    <b-alert v-if="form.textAlert" class="absolute top-5 left-1/2 -translate-x-1/2 z-50 w-fit bg-red-400 text-white rounded-md py-2 px-3 flex flex-row items-center gap-2 hover:scale-105 transition-all duration-300 z-20" >
       {{ form.textAlert }}
       <ClCloseMd @click="form.textAlert = ''" class="cursor-pointer hover:scale-125"/>
     </b-alert>
