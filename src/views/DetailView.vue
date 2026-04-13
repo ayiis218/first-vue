@@ -27,7 +27,9 @@ onMounted(async () => {
 <template>
   <main class="bg-black w-full h-full">
     <div class="flex flex-col items-center justify-center h-full">
-      <McLoading4Fill v-if="loading" class="text-indigo-500 w-14 h-14 text-center animate-spin animate-duration-500" />
+      <div v-if="loading" class="h-screen w-full flex flex-col gap-3 justify-center items-center">
+        <McLoading4Fill class="text-indigo-500 w-14 h-14 text-center animate-spin animate-duration-500" />
+      </div>
       <div v-else class="w-full flex flex-col gap-3">
         <p v-if="error" class="text-black text-center transition-all duration-300 hover:scale-95">{{ error }}</p>
         <div v-else class="flex flex-col gap-2 overflow-y-auto p-5 border border-slate-500 bg-gradient-to-r from-indigo-500/5 to-purple-500/5 ">
