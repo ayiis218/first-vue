@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { API_GetAnime, type IRsAnimeItem } from '../services/list.anime'
+import { McLoading4Fill } from '@kalimahapps/vue-icons'
 
 const anime = ref<IRsAnimeItem[]>([])
 const loading = ref(false)
@@ -19,26 +20,21 @@ onMounted(async () => {
 </script>
 
 <template>
-  <main>
-    <div
-      class="flex flex-col w-full h-[calc(100vh-64px)] bg-white m-3 rounded-md shadow-md overflow-y-auto"
-    >
-      <div class="sticky top-0 z-10 bg-white shadow-md p-2">
-        <h1 class="text-black font-bold">This is a Anime page</h1>
-      </div>
-      <div class="m-3">
-        <p v-if="loading">Loading...</p>
-        <p v-if="error">{{ error }}</p>
-        <ul v-if="!loading">
-          <li class="gap-2 shadow-md p-2 rounded-md" v-for="item in anime" :key="item.id">
-            <div class="flex flex-col w-full h-full p-3 rounded-md">
-              <h2 class="text-black font-bold">{{ item?.name }}</h2>
+  <main class="bg-black w-full h-full">
+    <div class="flex flex-col items-center justify-center h-full">
+      <div v-if="loading" class="h-screen w-full flex flex-col gap-3 justify-center items-center">
+        <McLoading4Fill class="text-indigo-500 w-14 h-14 text-center animate-spin animate-duration-500" />
+      </div>    
+      <p v-if="error" class="text-black text-center transition-all duration-300 hover:scale-95">{{ error }}</p>
+      <ul v-else class="flex flex-col gap-2 overflow-y-auto p-5">
+        <li class="rounded-lg" v-for="item in anime" :key="item.id">
+            <a :href="`/anime/${item?.id}`" class="flex flex-col w-full h-full p-3 rounded-lg border border-slate-500 bg-gradient-to-r from-indigo-500/5 to-purple-500/5 cursor-pointer">
+              <h1 class="text-indigo-500 font-bold transition-all duration-300">{{ item?.name }}</h1>
               <img :src="item?.image" alt="img" style="width: 60px; height: 100px" />
-              <p class="text-black">{{ item?.description }}</p>
-            </div>
+              <p class="text-slate-500 font-medium">{{ item?.description }}</p>
+            </a>  
           </li>
         </ul>
-      </div>
-    </div>
+        </div>
   </main>
 </template>

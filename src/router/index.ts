@@ -9,6 +9,7 @@ import RegisterView from '@/views/RegisterView.vue'
 import MainLayout from '@/layouts/MainLayout.vue'
 import AuthLayout from '@/layouts/AuthLayout.vue'
 import NotFoundView from '@/views/404.vue'
+import DetailView from '@/views/DetailView.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -25,6 +26,7 @@ const router = createRouter({
         { path: '/profile', name: 'profile', component: ProfileView },
         { path: '/about', name: 'about', component: AboutView },
         { path: '/anime', name: 'anime', component: AnimeView },
+        { path: '/anime/:name', name: 'detail-anime', component: DetailView },
         { path: '/otp', name: 'otp', component: OtpView },
       ],
     },
