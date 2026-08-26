@@ -1,23 +1,51 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <link rel="icon" href="/profile.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ayi Solahudin</title>
+  <title>Ayi Solahudin - Fullstack Developer</title>
+  <meta name="description" content="Ayi Solahudin - Fullstack Developer with 3+ years of experience building high-performance, scalable enterprise web applications at PT Bank Rakyat Indonesia (BRI) and Direktorat Jenderal Bea Cukai.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ayi Solahudin - Fullstack Developer">
+  <meta property="og:description" content="Fullstack Developer with 3+ years of experience building high-performance, scalable enterprise web applications.">
+  <meta property="og:image" content="/profile.png">
+  <meta property="og:url" content="https://ayi-shallahudin.vercel.app">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ayi Solahudin - Fullstack Developer">
+  <meta name="twitter:description" content="Fullstack Developer with 3+ years of experience building high-performance, scalable enterprise web applications.">
+  <meta name="twitter:image" content="/profile.png">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
     rel="stylesheet">
+
+  <style>
+    html.dark, html.dark body { background-color: #020617; }
+    html:not(.dark) body { background-color: #ffffff; }
+  </style>
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('theme') !== 'default') {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 
 <body>
   <div id="app"></div>
   <script type="module" src="/src/main.ts"></script>
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
 </body>
 
 </html>
