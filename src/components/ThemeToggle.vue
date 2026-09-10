@@ -9,7 +9,7 @@ const { isDark, toggleTheme } = useTheme();
   <button
     @click="toggleTheme"
     :aria-label="isDark ? 'Switch to default mode' : 'Switch to dark mode'"
-    class="text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors duration-300"
+    class="text-ink-muted hover:text-ink transition-colors duration-300"
   >
     <AkSunFill v-if="isDark" class="w-5 h-5" />
     <AkMoonFill v-else class="w-5 h-5" />

@@ -17,7 +17,7 @@ import ceisa from '@/assets/ceisa.webp'
 export const dataExperience = [
   {
     companyName: "PT Bank Rakyat Indonesia (Persero) Tbk",
-    position: "Frontend Developer (via PT Diksha Teknologi Indonesia)",
+    position: "Frontend Developer",
     date: "Apr '23 - Present",
     experience: [
       {
@@ -26,58 +26,44 @@ export const dataExperience = [
           {
             title: "Loyalty Management System (LMS)",
             list: [
-              "Architected and delivered an enterprise-scale platform using <b class='text-indigo-600 dark:text-indigo-400'>Next.js, Radix UI, TanStack React Query, and Zustand</b>, covering QRIS Promotion, Cashback, and multi-program reward management.",
+              "Architected and delivered an enterprise-scale platform using <b class='metric'>Next.js, Radix UI, TanStack React Query, and Zustand</b>, covering QRIS Promotion, Cashback, and multi-program reward management.",
               "Built the Non-Transaction (Non-TRx), Early Tenure, and CIF Grouping reward modules end-to-end, including program lifecycle management, validation schemas, and localization.",
               "Designed a granular, action-level permission (RBAC) system alongside a centralized approval workflow with rejection reasons and full approval history tracking.",
-              "Implemented an asynchronous export/download center with job-status polling and real-time notifications for large transaction exports (Excel/CSV).",
-              "Built a shared UI component library (data tables, multi-select with server-side search, badges, dialogs) using <b class='text-indigo-600 dark:text-indigo-400'>Radix UI and Zod</b>, standardizing API response handling and reducing code duplication across the codebase.",
-              "Authored unit tests covering Early Tenure, Deposit Account, and CIF Grouping modules to raise test coverage and guard against regressions.",
+              "Built a shared UI component library (data tables, multi-select, badges, dialogs) using <b class='metric'>Radix UI and Zod</b>, and authored unit tests across core modules — standardizing API handling and guarding against regressions.",
             ]
           },
           {
             title: "ProCash",
             list: [
-              "Engineered core logic for QRIS Promotion and Cashback workflows using <b class='text-indigo-600 dark:text-indigo-400'>Laravel</b>, covering promo creation, scheduling intervals, and merchant management.",
+              "Engineered core logic for QRIS Promotion and Cashback workflows using <b class='metric'>Laravel</b>, covering promo creation, scheduling intervals, and merchant management.",
               "Built a CSV bulk merchant upload pipeline with real-time validation and duplicate detection, replacing manual entry for large-scale promo rollouts.",
-              "Designed a <b class='text-indigo-600 dark:text-indigo-400'>QrisGateway abstraction layer</b> and migrated merchant lists to server-side pagination, cutting redundant gateway calls and improving list performance.",
-              "Implemented Mid Induk merchant inquiry search-sequencing to eliminate stale, out-of-order results in concurrent lookups.",
-              "Strengthened application security through static and dynamic code analysis (SAST/DAST), driving <b class='text-indigo-600 dark:text-indigo-400'>SonarQube duplicate code and code smell metrics down to 0%</b>.",
-              "Standardized date/time handling to UTC and Asia/Jakarta across promo scheduling to eliminate inconsistent expiry calculations.",
+              "Strengthened application security through static and dynamic code analysis (SAST/DAST), driving <b class='metric'>SonarQube duplicate code and code smell metrics down to 0%</b>.",
             ]
           },
           {
             title: "Ambilin Dashboard Internal - Agent Management & Pickup Monitoring",
             list: [
-              "Successfully launched the Ambilin Dashboard Internal, a comprehensive platform for agent management, partner management and pickup monitoring.",
               "Reduced SonarQube duplicate code from 15% to 0% and eliminated all code smells.",
-              "Collaborated closely with Product Owners and UI/UX designers to translate complex business logic into intuitive operational dashboards.",
-              "Executed targeted <b class='text-indigo-600 dark:text-indigo-400'>performance optimizations</b> to ensure lag-free monitoring of thousands of concurrent cash pickup transactions.",
-              "Drove the frontend initiative using <b class='text-indigo-600 dark:text-indigo-400'>Next.js and Tailwind CSS</b> to build real-time monitoring maps and complex data grids.",
-              "Architected a scalable <b class='text-indigo-600 dark:text-indigo-400'>Role-Based Access Control (RBAC)</b> system tailored for multi-tier organizational structures.",
+              "Executed targeted <b class='metric'>performance optimizations</b> to ensure lag-free monitoring of thousands of concurrent cash pickup transactions.",
+              "Drove the frontend initiative using <b class='metric'>Next.js and Tailwind CSS</b> to build real-time monitoring maps and complex data grids.",
               "Implemented request/response encryption and decryption to secure sensitive data in transit.",
-              "Authored comprehensive SIT/UAT documentation and established standard deployment pipelines.",
             ]
           },
           {
             title: "Ambilin Dashboard Partner - Partner Order Management",
             list: [
               "Successfully launched the Ambilin Dashboard Partner, adopted by Indomaret (2000+ outlets), Alfamidi, Haus, Kopi Jago, Pertamina, and other major partners for order management.",
-              "Resolved order-handling issues between partners and agents, improving transaction reliability.",
               "Reduced SonarQube duplicate code from 18% to 0% and eliminated all code smells.",
-              "Architected a heavily-optimized <b class='text-indigo-600 dark:text-indigo-400'>bulk upload mechanism</b>, enabling partners to process thousands of records in seconds with real-time validation feedback.",
-              "Significantly optimized the order management flow, <b class='text-indigo-600 dark:text-indigo-400'>reducing time-to-completion by 40%</b> for primary user journeys.",
-              "Built an integrated partner portal with <b class='text-indigo-600 dark:text-indigo-400'>Next.js</b>, streamlining outlet management and order workflows.",
+              "Architected a heavily-optimized <b class='metric'>bulk upload mechanism</b>, enabling partners to process thousands of records in seconds with real-time validation feedback.",
+              "Significantly optimized the order management flow, <b class='metric'>reducing time-to-completion by 40%</b> for primary user journeys.",
             ]
           },
           {
             title: "Ambilin - Cash Pickup & Order System",
             list: [
               "Adopted by 1000+ agents for daily cash pickup operations.",
-              "Optimized application performance while maintaining existing features and system stability.",
-              "Resolved critical pickup-order issues reported by agents, improving reliability.",
               "Spearheaded major refactoring of legacy codebases, significantly boosting readability, maintainability, and rendering performance.",
               "Instituted advanced data fetching strategies and centralized state management, eliminating redundant API calls and lowering server load by 35%.",
-              "Ensured strict QA compliance, successfully resolving highly critical UI/UX bugs before deploying seamlessly to production.",
             ]
           }
         ]
@@ -90,11 +76,8 @@ export const dataExperience = [
             list: [
               "Successfully launched BRISilk to production, onboarding 1000+ users.",
               "Resolved critical fraud-detection issues for PT Bank Rakyat Indonesia.",
-              "Integrated Open API to connect BRISilk with PT Bank Rakyat Indonesia's broader digital ecosystem.",
-              "Engineered a high-performance URL shortener application using <b class='text-indigo-600 dark:text-indigo-400'>Next.js, Material UI, and React Query</b>.",
-              "Integrated real-time <b class='text-indigo-600 dark:text-indigo-400'>analytics and visualization charts</b>, providing actionable insights into link engagement.",
-              "Linked the platform with BRISTARS Mobile to streamline cross-app approval mechanisms.",
-              "Instrumented the application with <b class='text-indigo-600 dark:text-indigo-400'>ElasticSearch APM</b> to continuously monitor and improve web vital metrics."
+              "Engineered a high-performance URL shortener application using <b class='metric'>Next.js, Material UI, and React Query</b>, with real-time analytics and visualization charts providing actionable insights into link engagement.",
+              "Instrumented the application with <b class='metric'>ElasticSearch APM</b> to continuously monitor and improve web vital metrics."
             ]
           }
         ]
@@ -112,7 +95,7 @@ export const dataExperience = [
           {
             title: "CEISA 4.0",
             list: [
-              "Developed critical components for a massive enterprise system using <b class='text-indigo-600 dark:text-indigo-400'>React, Ant Design, Highcharts, and ElasticSearch</b>.",
+              "Developed critical components for a massive enterprise system using <b class='metric'>React, Ant Design, Highcharts, and ElasticSearch</b>.",
               "Constructed complex dynamic dashboards capable of rendering real-time operational reports from large data aggregates.",
               "Partnered extensively with QA teams to systematically eliminate edge-case rendering bugs and memory leaks."
             ]
@@ -135,13 +118,13 @@ export const dataEducation = [
           {
             title: "",
             list: [
-              "Built full-stack web applications using <b class='text-indigo-600 dark:text-indigo-400'>React.js, Next.js, Express.js, and PostgreSQL</b>.",
+              "Built full-stack web applications using <b class='metric'>React.js, Next.js, Express.js, and PostgreSQL</b>.",
               "Built RESTful APIs and microservices from scratch.",
-              "Successfully developed a responsive and user-friendly web application using <b class='text-indigo-600 dark:text-indigo-400'>Next.js and Styled Components</b>.",
-              "Built an API Gateway and database layer using <b class='text-indigo-600 dark:text-indigo-400'>Express.js and PostgreSQL</b>.",
+              "Successfully developed a responsive and user-friendly web application using <b class='metric'>Next.js and Styled Components</b>.",
+              "Built an API Gateway and database layer using <b class='metric'>Express.js and PostgreSQL</b>.",
               "Algorithms, robust programming logic, flowchart, and scalable data structure patterns.",
-              "Learned and applied <b class='text-indigo-600 dark:text-indigo-400'>Framework (Next.js, React.js, Express.js, PostgreSQL)</b> for build full-stack web applications.",
-              "Learned and applied <b class='text-indigo-600 dark:text-indigo-400'>Agile/Scrum</b> methodologies to manage project workflows and deliverables.",
+              "Learned and applied <b class='metric'>Framework (Next.js, React.js, Express.js, PostgreSQL)</b> for build full-stack web applications.",
+              "Learned and applied <b class='metric'>Agile/Scrum</b> methodologies to manage project workflows and deliverables.",
               "Collaborated in Agile teams employing daily standups, weekly sprints, and structured deployment pipelines.",
             ]
           }
@@ -161,9 +144,9 @@ export const dataEducation = [
             title: "",
             list: [
               "Learned fundamental programming logic, flowchart, and scalable data structure patterns.",
-              "Learned and applied <b class='text-indigo-600 dark:text-indigo-400'>Framework (PHP, MySQL, and HTML)</b> for build full-stack web applications.",
+              "Learned and applied <b class='metric'>Framework (PHP, MySQL, and HTML)</b> for build full-stack web applications.",
               "Established strong foundations in relational database design (ERD) and fundamental programming concepts.",
-              "Developed fully functional web applications deploying <b class='text-indigo-600 dark:text-indigo-400'>PHP, MySQL, and HTML</b>.",
+              "Developed fully functional web applications deploying <b class='metric'>PHP, MySQL, and HTML</b>.",
               "Completed a successful software engineering internship at the Faculty of Informatics, Universitas Siliwangi.",
               "Drafted comprehensive technical documentation and system architecture blueprints."
             ]
