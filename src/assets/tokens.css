@@ -1,0 +1,51 @@
+/**
+ * Design tokens — semantic color system.
+ * Light ("default") mode: vintage ledger palette (colorhunt.co/palettes/vintage).
+ * Dark mode: existing indigo-on-slate identity.
+ *
+ * Values are RGB triplets (space-separated, no `rgb()`/commas) so Tailwind
+ * can compose them with its opacity modifier via `rgb(var(--x) / <alpha-value>)`
+ * (see tailwind.config.js). A single utility class like `bg-accent` or
+ * `border-accent/30` then resolves correctly in both themes — no `dark:`
+ * pairing needed for tokens defined here.
+ */
+
+@font-face {
+  font-family: 'Capriola';
+  src: url('./font/Capriola-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-paper: 220 215 201;         /* #dcd7c9 parchment */
+  --color-surface: 245 242 234;       /* #f5f2ea */
+  --color-surface-hover: 239 233 220; /* #efe9dc */
+  --color-ink: 44 57 48;              /* #2c3930 forest ink */
+  --color-ink-soft: 63 79 68;         /* #3f4f44 pine */
+  --color-ink-muted: 107 117 104;     /* #6b7568 */
+  --color-border: 205 198 180;        /* #cdc6b4 */
+  --color-border-strong: 179 170 146; /* #b3aa92 */
+  --color-accent: 162 123 92;         /* #a27b5c camel/leather */
+  --color-accent-strong: 138 103 73;  /* #8a6749 */
+  --color-metric: 168 69 58;          /* #a8453a rust — "red ink" untuk angka pencapaian */
+  --color-recognition: 184 134 11;    /* #b8860b antique brass — Certificate */
+  --color-on-accent: 253 252 249;     /* #fdfcf9 */
+}
+
+.dark {
+  --color-paper: 2 6 23;              /* #020617 slate-950 */
+  --color-surface: 15 23 42;          /* #0f172a slate-900 */
+  --color-surface-hover: 30 41 59;    /* #1e293b slate-800 */
+  --color-ink: 226 232 240;           /* #e2e8f0 slate-200 */
+  --color-ink-soft: 203 213 225;      /* #cbd5e1 slate-300 */
+  --color-ink-muted: 148 163 184;     /* #94a3b8 slate-400 */
+  --color-border: 30 41 59;           /* #1e293b slate-800 */
+  --color-border-strong: 51 65 85;    /* #334155 slate-700 */
+  --color-accent: 129 140 248;        /* #818cf8 indigo-400 */
+  --color-accent-strong: 99 102 241;  /* #6366f1 indigo-500 */
+  --color-metric: 224 120 86;         /* #e07856 rust (light variant) */
+  --color-recognition: 212 162 76;    /* #d4a24c brass (light variant) */
+  --color-on-accent: 255 255 255;
+}

@@ -45,3 +45,19 @@ if (typeof current?.getItem !== 'function') {
     })
   }
 }
+
+// jsdom tidak mengimplementasikan matchMedia. Komponen yang memakai
+// useReducedMotion/useCursorTilt/useMagnetic memanggilnya saat mounted,
+// jadi perlu stub minimal supaya mount tidak crash di test.
+if (typeof window !== 'undefined' && typeof window.matchMedia !== 'function') {
+  window.matchMedia = (query: string) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: () => {},
+    removeListener: () => {},
+    addEventListener: () => {},
+    removeEventListener: () => {},
+    dispatchEvent: () => false,
+  }) as MediaQueryList
+}

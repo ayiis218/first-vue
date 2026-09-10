@@ -1,17 +1,41 @@
+@import './tokens.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* optional: global font */
 @layer base {
   html {
-    font-family:
-      "Inter",
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont;
   }
   body, html {
-    @apply bg-slate-950 text-slate-200 antialiased selection:bg-indigo-500/30;
+    @apply bg-paper text-ink antialiased;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
+  }
+  ::selection {
+    background-color: rgb(var(--color-accent) / 0.25);
+  }
+}
+
+/* Metric highlight — angka pencapaian di dalam bullet experience (lihat SectionCardList.vue).
+   Mulai redup, lalu "menyala" saat SectionCard induknya (data-reveal) masuk viewport. */
+.metric {
+  color: var(--color-metric);
+  font-weight: 600;
+  opacity: 0.45;
+  transition: opacity 0.6s ease;
+}
+[data-reveal="true"] .metric {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

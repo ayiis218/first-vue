@@ -27,10 +27,14 @@ describe('ProjectCard', () => {
     expect(images[0]?.attributes('alt')).toBe(baseProps.title)
   })
 
-  it('membungkus kartu dengan tautan aman saat link tersedia', () => {
+  it('membuka detail modal berisi tautan aman saat kartu diklik dan link tersedia', async () => {
     const wrapper = mount(ProjectCard, {
       props: { ...baseProps, link: 'https://ayi-shallahudin.vercel.app' },
     })
+
+    expect(wrapper.find('a').exists()).toBe(false)
+
+    await wrapper.find('button').trigger('click')
     const link = wrapper.find('a')
 
     expect(link.attributes('href')).toBe('https://ayi-shallahudin.vercel.app')
@@ -38,9 +42,12 @@ describe('ProjectCard', () => {
     expect(link.attributes('rel')).toBe('noopener noreferrer')
   })
 
-  it('tidak me-render tautan saat link kosong', () => {
+  it('menampilkan label sistem internal di modal saat link kosong', async () => {
     const wrapper = mount(ProjectCard, { props: { ...baseProps, link: '' } })
 
+    await wrapper.find('button').trigger('click')
+
     expect(wrapper.find('a').exists()).toBe(false)
+    expect(wrapper.text()).toContain('Internal enterprise system')
   })
 })
