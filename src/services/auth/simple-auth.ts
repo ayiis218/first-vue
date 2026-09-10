@@ -1,43 +1,47 @@
 import { useAuth, useRegister } from "@/stores/auth"
+import { createToken, verifyPassword } from "./credentials"
 
 interface IProps {
   email: string
   password: string
 }
 
-export async function GuestAuth(param: IProps) {
-  const payload = {
-    email: param.email,
-    password: param.password,
-  }
-
-  const { login } = useAuth()
-  const result = {
-    token: "tokennnnnnn",
-    name: "Guest",
-    email: payload.email,
-  }
-  login(result)
+export interface ILoginResult {
+  ok: boolean
+  message: string
 }
 
-export async function Login(param: IProps): Promise<string> {
-
-  const { akun } = useRegister()
-
-  if (akun.value?.email !== param.email) return "Akun anda tidak terdaftar silakan melakukan registrasi"
-  if (akun.value?.password !== param.password) return "Password anda salah"
-
-  const payload = {
-    email: param.email,
-    password: param.password,
-  }
-
+export async function GuestAuth(param: IProps): Promise<ILoginResult> {
   const { login } = useAuth()
-  const result = {
-    token: "tokennnnnnn",
-    name: akun.value?.username,
-    email: payload.email,
+
+  login({
+    token: createToken(),
+    name: "Guest",
+    email: param.email || "guest@example.com",
+  })
+
+  return { ok: true, message: "Login berhasil" }
+}
+
+export async function Login(param: IProps): Promise<ILoginResult> {
+  const { akun } = useRegister()
+  const { login } = useAuth()
+
+  const stored = akun.value
+  if (!stored || stored.email !== param.email) {
+    return { ok: false, message: "Akun anda tidak terdaftar silakan melakukan registrasi" }
   }
-  login(result)
-  return "Login berhasil"
+
+  const isValid = await verifyPassword(param.password, stored.salt, stored.passwordHash)
+  if (!isValid) {
+    return { ok: false, message: "Password anda salah" }
+  }
+
+  login({
+    token: createToken(),
+    name: stored.username,
+    email: stored.email,
+  })
+
+  return { ok: true, message: "Login berhasil" }
 }

@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import CardSection from '@/composables/card.section.vue'
-import ListItem from '@/composables/list.item.vue'
-import CardItem from '@/composables/card.item.vue'
-import ThemeToggle from '@/composables/theme.toggle.vue'
+import SectionCard from '@/components/SectionCard.vue'
+import TitledList from '@/components/TitledList.vue'
+import ProjectCard from '@/components/ProjectCard.vue'
+import ThemeToggle from '@/components/ThemeToggle.vue'
 import { motion, type VariantType } from 'motion-v';
 import { ref, onMounted, onUnmounted } from 'vue';
 import { SuArrowUpCircle, ThAlignJustify, SuClose, AkGithubFill, AkLinkedinBoxFill, AkInstagramFill, FeMail, AkWhatsappFill } from '@kalimahapps/vue-icons';
 import { dataExperience, dataEducation, techStack, dataProject, contact, dataCertificate } from '@/stores/mock';
-import { useScreenSize } from '@/helper/screen.size';
+import { useScreenSize } from '@/composables/screen.size';
 import cv from '@/assets/CV.pdf';
 
 type AnimationVariant = {
@@ -170,7 +170,7 @@ onUnmounted(() => {
       <div class="relative group">
         <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
         <div class="relative w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden border-2 border-slate-200 dark:border-slate-800 shadow-2xl">
-          <img src="../assets/profile.png" alt="Ayi Solahudin Profile" class="w-full h-full object-cover scale-105 group-hover:scale-110 transition duration-700 ease-in-out" />
+          <img src="../assets/profile.webp" alt="Ayi Solahudin Profile" class="w-full h-full object-cover scale-105 group-hover:scale-110 transition duration-700 ease-in-out" />
         </div>
       </div>
       <div class="flex-1 text-center">
@@ -215,7 +215,7 @@ onUnmounted(() => {
         </div>
 
         <div class="grid gap-6">
-          <CardSection
+          <SectionCard
             v-for="(item, index) in dataExperience"
             :key="index"
             :companyName="item.companyName"
@@ -238,7 +238,7 @@ onUnmounted(() => {
         </div>
 
         <div class="grid gap-6">
-          <CardSection
+          <SectionCard
             v-for="(item, index) in dataEducation"
             :key="index"
             :companyName="item.companyName"
@@ -260,7 +260,7 @@ onUnmounted(() => {
         </div>
 
         <div class="grid gap-6">
-          <CardSection
+          <SectionCard
             v-for="(item, index) in dataCertificate"
             :key="index"
             :companyName="item.companyName"
@@ -290,7 +290,7 @@ onUnmounted(() => {
                 :key="index" 
                 class="flex-1"
               >
-                <ListItem
+                <TitledList
                   :title="item.title"
                   :list="item.list"
                 />
@@ -311,7 +311,7 @@ onUnmounted(() => {
         </div>
 
         <div class="grid gap-6 grid-cols-1 md:grid-cols-2">
-          <CardItem 
+          <ProjectCard 
             v-for="(item, index) in dataProject"
             :key="index"
             :title="item.projectName"
@@ -334,7 +334,7 @@ onUnmounted(() => {
     >
       <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col items-center gap-4">
         <p class="text-sm text-slate-600 dark:text-slate-300 font-light hover:text-indigo-500 hover:transition-colors hover:duration-300 hover:scale-105">
-          Ayi Solahudin - Frontend Developer
+          Ayi Solahudin - Fullstack Developer
         </p>
       </div>
       <div class="flex flex-row gap-2 justify-center items-center">

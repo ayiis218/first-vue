@@ -6,11 +6,12 @@
 </script>
 
 <template>
-    <input 
-      type="text" 
-      v-for="length in 4" 
-      class="w-8 h-8 text-black border border-gray-300 rounded-full text-center" 
-      @click="onClick(length)" 
+    <input
+      v-for="length in 4"
+      :key="length"
+      type="text"
+      class="w-8 h-8 text-black border border-gray-300 rounded-full text-center"
+      @click="onClick(length)"
       :value="value"
       maxlength="1"
     />

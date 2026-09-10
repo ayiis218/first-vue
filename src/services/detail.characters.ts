@@ -37,8 +37,8 @@ export interface IError {
   message: string
 }
 
-export async function API_GetDetailCharacters(name: string): Promise<IRsAnimeItem> {
-  const endpoint = `https://dragonball-api.com/api/characters/${name}`
+export async function API_GetDetailCharacters(id: string): Promise<IRsAnimeItem> {
+  const endpoint = `https://dragonball-api.com/api/characters/${id}`
   const result = await fetch(endpoint, {
     method: "GET",
     headers: {

@@ -1,3 +1,19 @@
+import portofolio from '@/assets/portofolio.webp'
+import lms from '@/assets/lms.webp'
+import lms2 from '@/assets/lms2.webp'
+import procash from '@/assets/procash.webp'
+import procash2 from '@/assets/procash2.webp'
+import ambilinInternal from '@/assets/ambilin-internal.webp'
+import ambilinInternal1 from '@/assets/ambilin-internal1.webp'
+import ambilinPartner from '@/assets/ambilin-partner.webp'
+import ambilinPartner2 from '@/assets/ambilin-partner2.webp'
+import ambilin from '@/assets/ambilin.webp'
+import ambilin2 from '@/assets/ambilin2.webp'
+import ambilin3 from '@/assets/ambilin3.webp'
+import brisilk from '@/assets/brisilk.webp'
+import brisilk2 from '@/assets/brisilk2.webp'
+import ceisa from '@/assets/ceisa.webp'
+
 export const dataExperience = [
   {
     companyName: "PT Bank Rakyat Indonesia (Persero) Tbk",
@@ -255,56 +271,56 @@ export const dataProject = [
   {
     projectName: "Personal Portfolio",
     description: "Architected a highly interactive, responsive portfolio leveraging modern web technologies and subtle micro-animations to highlight UI/UX engineering skills.",
-    images: ["../assets/portofolio.png"],
+    images: [portofolio],
     link: "https://ayi-shallahudin.vercel.app",
     techStack: "Vue.js, Vite, Tailwind CSS, Motion-v"
   },
   {
     projectName: "LMS - Loyalty Management System",
     description: "Designed a major enterprise loyalty ecosystem for PT Bank Rakyat Indonesia (BRI), covering QRIS Promotion, Cashback, Non-Transaction rewards, Early Tenure, and CIF Grouping program management with a centralized approval workflow, async export jobs, and granular RBAC.",
-    images: ["../assets/lms.png", "../assets/lms2.png"],
+    images: [lms, lms2],
     link: "",
     techStack: "React.js, Next.js, Radix UI, Tailwind CSS, TanStack Query, Zustand, Zod, PostgreSQL, ElasticSearch APM"
   },
   {
     projectName: "ProCash Core",
     description: "Spearheaded the development of the QRIS Promotion and Cashback engine for BRI merchants, building bulk merchant upload, promo scheduling, and a QrisGateway abstraction layer, while hardening the application against SAST/DAST findings.",
-    images: ["../assets/procash.png", "../assets/procash2.png"],
+    images: [procash, procash2],
     link: "",
     techStack: "Laravel, PHP, MySQL, Bootstrap, jQuery"
   },
   {
     projectName: "Ambilin Dashboard Internal",
     description: "Engineered a centralized command center for BRI administrators, securing critical data with role-based access logic while monitoring live cash pickup logistics.",
-    images: ["../assets/ambilin-internal.png", "../assets/ambilin-internal1.png"],
+    images: [ambilinInternal, ambilinInternal1],
     link: "https://play.google.com/store/apps/details?id=id.co.bri.brilinkmobile&hl=id",
     techStack: "Next.js, Tailwind CSS, PostgreSQL, Context API, Highcharts"
   },
   {
     projectName: "Ambilin Partner Portal",
     description: "Built an intuitive operational hub for Mitra BRILink partners. Empowered external partners to orchestrate thousands of transactions through a highly optimized bulk upload system.",
-    images: ["../assets/ambilin-partner.png", "../assets/ambilin-partner2.png"],
+    images: [ambilinPartner, ambilinPartner2],
     link: "https://play.google.com/store/apps/details?id=id.co.bri.brilinkmobile&hl=id",
     techStack: "Next.js, Tailwind CSS, PostgreSQL, ElasticSearch APM"
   },
   {
     projectName: "Ambilin Logistics System",
     description: "Transformed legacy code into a highly performant application. Integrated state-of-the-art caching and data fetching strategies reducing network round-trips significantly.",
-    images: ["../assets/ambilin.png", "../assets/ambilin2.png", "../assets/ambilin3.png"],
+    images: [ambilin, ambilin2, ambilin3],
     link: "https://play.google.com/store/apps/details?id=id.co.bri.brilinkmobile&hl=id",
     techStack: "Next.js, Docker, ElasticSearch APM, Tailwind CSS"
   },
   {
     projectName: "BRISilk Shortlink Platform",
     description: "Constructed a secure, compliant URL shortening and tracking service capable of surviving high-traffic spikes whilst offering detailed engagement analytics to stakeholders.",
-    images: ["../assets/brisilk.png", "../assets/brisilk2.png"],
+    images: [brisilk, brisilk2],
     link: "https://brilianapps.bri.co.id",
     techStack: "Next.js, Material UI, React Query, MySQL, Docker, GO"
   },
   {
     projectName: "CEISA 4.0 Customs System",
     description: "Contributed critical UI layers for Indonesia's Customs platform (DJBC), focusing on charting large datasets and enforcing flawless operational reporting stability.",
-    images: ["../assets/ceisa.jpg"],
+    images: [ceisa],
     link: "https://portal.beacukai.go.id/portal/login",
     techStack: "React.js, Ant Design, Highcharts, Java Spring Boot"
   }

@@ -3,6 +3,7 @@ import { reactive, ref, watchEffect } from 'vue'
 import { RouterLink, useRouter } from 'vue-router'
 import { EyeIcon, EyeSlashIcon } from '@heroicons/vue/24/outline'
 import { SimpleRegister } from '@/services/auth/simple-register'
+import { ClCloseMd } from '@kalimahapps/vue-icons'
 
 const router = useRouter()
 
@@ -23,9 +24,13 @@ const isShow = (key: keyof typeof show.value) => {
   show.value[key] = !show.value[key]
 }
 
-const onRegister = () => {
-  if (form.password !== form.confirm_password) return form.textAlert = "Password dan Confirm Password tidak sama"
-  SimpleRegister(form)
+const onRegister = async () => {
+  if (form.password !== form.confirm_password) {
+    form.textAlert = "Password dan Confirm Password tidak sama"
+    return
+  }
+
+  await SimpleRegister(form)
   router.push("/login")
 }
 
@@ -40,14 +45,14 @@ watchEffect(() => {
 
 <template>
   <div class="relative">
-    <b-alert v-if="form.textAlert" class="absolute top-5 left-1/2 -translate-x-1/2 z-50 w-fit bg-red-400 text-white rounded-md py-2 px-3 flex flex-row items-center gap-2 hover:scale-105 transition-all duration-300 z-20" >
+    <div v-if="form.textAlert" role="alert" class="absolute top-5 left-1/2 -translate-x-1/2 z-50 w-fit bg-red-400 text-white rounded-md py-2 px-3 flex flex-row items-center gap-2 hover:scale-105 transition-all duration-300">
       {{ form.textAlert }}
       <ClCloseMd @click="form.textAlert = ''" class="cursor-pointer hover:scale-125"/>
-    </b-alert>
+    </div>
   </div>  
   <div class="h-screen w-full bg-slate-950 flex flex-col xl:flex-row text-slate-200 selection:bg-indigo-500/30 font-sans">
     <div class="w-full h-full flex flex-col justify-center items-center hidden xl:block">
-      <img src="../assets/signup.jpg" alt="signup" class="w-full h-full object-cover"/>
+      <img src="../assets/signup.webp" alt="signup" class="w-full h-full object-cover"/>
     </div>
     <div class="w-full h-full flex flex-col justify-center items-center bg-blue-300">
       <div class="w-[60%] flex flex-col gap-3 p-3">
@@ -93,11 +98,12 @@ watchEffect(() => {
                 <EyeSlashIcon v-else class="w-5 h-5 text-black"/>
               </span>
             </div>
-            <Button
-              type="Submit"
+            <button
+              type="submit"
               class="w-full bg-blue-500 rounded-md p-3 text-white hover:bg-blue-400 mt-3 hover:scale-105"
-              >Register</Button
             >
+              Register
+            </button>
           </form>
           <div class="flex flex-row justify-center gap-1">
             <h5 class="text-xs md:text-base text-center font-medium text-white">Already have an account?</h5>
@@ -107,21 +113,21 @@ watchEffect(() => {
           </div>
           <div class="flex flex-row justify-center gap-4 cursor-pointer">
             <img
-              src="../assets/google.png"
+              src="../assets/google.webp"
               alt="google"
               width="25px"
               height="25px"
               class="object-contain hover:scale-125"
             />
             <img
-              src="../assets/facebook.png"
+              src="../assets/facebook.webp"
               alt="facebook"
               width="25px"
               height="25px"
               class="object-contain hover:scale-125"
             />
             <img
-              src="../assets/apple.png"
+              src="../assets/apple.webp"
               alt="apple"
               width="20px"
               height="20px"

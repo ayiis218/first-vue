@@ -3,7 +3,7 @@ import { getSession } from "@/stores/session";
 interface IInterceptorProps {
    endpoint: string;
    customHeader?: Record<string, string>;
-   fetchOption?: Record<string, string>;
+   fetchOption?: RequestInit;
 }
 
 export async function interceptorAPI({
@@ -12,23 +12,25 @@ export async function interceptorAPI({
   fetchOption = {},
 }: Readonly<IInterceptorProps>) {
    const token = await getSession()
-   
+
    const headers = {
       ...customHeader,
-      Authorization: "Bearer " + token,
+      ...(token ? { Authorization: "Bearer " + token } : {}),
       "Content-Type": "application/json",
       'x-log-id': crypto.randomUUID()
    }
+
    const result = await fetch(endpoint, { ...fetchOption, headers })
    if (result.status === 401 || result.status === 403) {
-      // TODO: redirect to login page
-      window.location.href = '/auth/login'
-   }  
+      localStorage.removeItem('session')
+      window.location.href = '/login'
+      return null
+   }
+
    try {
-      return result.json()
+      return await result.json()
    } catch (error) {
       console.error(error)
       return null
    }
-    
 }

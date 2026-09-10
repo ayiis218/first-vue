@@ -1,13 +1,11 @@
 <script lang="ts" setup>
 import { reactive, computed, watchEffect } from 'vue'
-import { useLocalStorage } from '@/stores/auth'
+import { useAuth } from '@/stores/auth'
 import { EyeIcon, EyeSlashIcon, UserIcon } from '@heroicons/vue/20/solid'
-import { SimpleRegister } from '@/services/auth/simple-register'
+import { SimpleUpdateProfile } from '@/services/auth/simple-register'
+import { ClCloseMd } from '@kalimahapps/vue-icons'
 
-const session = useLocalStorage<{
-  name: string
-  email: string
-}>("session", null)
+const { session } = useAuth()
 
 const onModal = reactive({
   updateProfile: false,
@@ -58,19 +56,27 @@ const onUpdate = (action: boolean) => {
   onModal.updateProfile = action
 }
 
-const updateProfile = () => {
-  const payload = {
+const updateProfile = async () => {
+  if (!userProfile.name.trim() || !userProfile.email.trim()) {
+    userProfile.textAlert = "Nama dan email tidak boleh kosong"
+    return
+  }
+  if (userProfile.password !== userProfile.confirmPassword) {
+    userProfile.textAlert = "Password dan Confirm Password harus sama"
+    return
+  }
+
+  // Password dikosongkan berarti kredensial lama dipertahankan.
+  await SimpleUpdateProfile({
     username: userProfile.name,
     email: userProfile.email,
-    password: userProfile.password,
-    confirm_password: userProfile.confirmPassword
-  }
-  if(!payload) return userProfile.textAlert = "Payload tidak boleh kosong"
-  if (userProfile.password !== userProfile.confirmPassword) return userProfile.textAlert = "Password dan Confirm Password harus sama"
+    password: userProfile.password || undefined,
+  })
 
-  SimpleRegister(payload)
+  userProfile.password = ''
+  userProfile.confirmPassword = ''
   onModal.updateProfile = false
-  return userProfile.textAlert = "Profile berhasil diupdate"
+  userProfile.textAlert = "Profile berhasil diupdate"
 }
 
 const isShow = (field: keyof typeof show) => {
@@ -90,10 +96,10 @@ watchEffect(() => {
 <template >
   <main>
     <div class="relative">
-      <b-alert v-if="userProfile.textAlert" class="absolute top-5 left-1/2 -translate-x-1/2 z-50 w-fit bg-red-400 text-white rounded-md py-2 px-3 flex flex-row items-center gap-2 hover:scale-105 transition-all duration-300 z-20" >
+      <div v-if="userProfile.textAlert" role="alert" class="absolute top-5 left-1/2 -translate-x-1/2 z-50 w-fit bg-red-400 text-white rounded-md py-2 px-3 flex flex-row items-center gap-2 hover:scale-105 transition-all duration-300">
         {{ userProfile.textAlert }}
         <ClCloseMd @click="userProfile.textAlert = ''" class="cursor-pointer hover:scale-125"/>
-      </b-alert>
+      </div>
     </div>
     <div class="flex flex-col items-center h-[93vh] gap-3">
       <div class="flex flex-col items-center mt-20 gap-3">
@@ -144,9 +150,9 @@ watchEffect(() => {
             <input 
               name="password"
               :type="show.password ? 'text' : 'password'" 
-              v-model="userProfile.password" 
-              placeholder="Password" 
-              required
+              v-model="userProfile.password"
+              placeholder="Password baru (kosongkan bila tidak diubah)"
+              autocomplete="new-password"
               class="w-full bg-transparent outline-none">
             <span @click="isShow('password')">
               <EyeIcon v-if="!show.password" class="w-5 h-5"/>
@@ -157,9 +163,9 @@ watchEffect(() => {
             <input 
               name="confirmPassword"
               :type="show.confirmPassword ? 'text' : 'password'" 
-              v-model="userProfile.confirmPassword" 
-              placeholder="Confirm Password" 
-              required
+              v-model="userProfile.confirmPassword"
+              placeholder="Konfirmasi password baru"
+              autocomplete="new-password"
               class="w-full bg-transparent outline-none">
             <span @click="isShow('confirmPassword')">
               <EyeIcon v-if="!show.confirmPassword" class="w-5 h-5"/>

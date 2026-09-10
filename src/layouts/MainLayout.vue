@@ -12,11 +12,9 @@ const isOpen = reactive({
   avatar: ''
 })
 
+// Proteksi route ditangani `beforeEach` di router, layout hanya menampilkan data sesi.
 watchEffect(() => {
-  if (!user.value) {
-    router.replace('/login')
-  }
-  isOpen.avatar = localStorage.getItem("avatar") ?? ""
+  isOpen.avatar = user.value ? localStorage.getItem("avatar") ?? "" : ""
 })
 
 const onToggle = () => {
@@ -33,7 +31,6 @@ const onLogout = () => {
   <div class="sticky top-0 w-full flex flex-row items-center bg-white shadow-md py-3">
     <nav class="w-full py-2 flex flex-row justify-center items-center">
       <RouterLink to="/" class="text-indigo-500 font-medium transition-all duration-300 hover:scale-95">Home</RouterLink>
-      <!-- <RouterLink to="/about" class="text-indigo-500 font-medium transition-all duration-300 hover:scale-95">About</RouterLink> -->
       <RouterLink to="/anime" class="text-indigo-500 font-medium transition-all duration-300 hover:scale-95">Anime</RouterLink>
       <!-- <RouterLink to="/otp" class="text-indigo-500 font-medium transition-all duration-300 hover:scale-95">OTP</RouterLink> -->
       <RouterLink to="/profile" class="text-indigo-500 font-medium transition-all duration-300 hover:scale-95">Profile</RouterLink>

@@ -11,12 +11,12 @@ const error = ref<string | null>(null)
 const route = useRoute()
 
 onMounted(async () => {
-  const name = route.params.name  
+  const id = route.params.id
   try {
     loading.value = true
-    anime.value = await API_GetDetailCharacters(name as string)
-  } catch (e: any) {
-    error.value = e.message
+    anime.value = await API_GetDetailCharacters(id as string)
+  } catch (e) {
+    error.value = e instanceof Error ? e.message : 'Gagal memuat detail karakter'
   } finally {
     loading.value = false
   }

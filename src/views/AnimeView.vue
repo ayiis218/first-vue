@@ -11,8 +11,8 @@ onMounted(async () => {
   try {
     loading.value = true
     anime.value = await API_GetAnime()
-  } catch (e: any) {
-    error.value = e.message
+  } catch (e) {
+    error.value = e instanceof Error ? e.message : 'Gagal memuat daftar karakter'
   } finally {
     loading.value = false
   }
@@ -28,11 +28,11 @@ onMounted(async () => {
       <p v-if="error" class="text-black text-center transition-all duration-300 hover:scale-95">{{ error }}</p>
       <ul v-else class="flex flex-col gap-2 overflow-y-auto p-5">
         <li class="rounded-lg" v-for="item in anime" :key="item.id">
-            <a :href="`/anime/${item?.id}`" class="flex flex-col w-full h-full p-3 rounded-lg border border-slate-500 bg-gradient-to-r from-indigo-500/5 to-purple-500/5 cursor-pointer hover:-translate-y-2 hover:shadow-lg hover:shadow-indigo-500/10 hover:transition-all hover:duration-300">
+            <RouterLink :to="{ name: 'detail-anime', params: { id: item.id } }" class="flex flex-col w-full h-full p-3 rounded-lg border border-slate-500 bg-gradient-to-r from-indigo-500/5 to-purple-500/5 cursor-pointer hover:-translate-y-2 hover:shadow-lg hover:shadow-indigo-500/10 hover:transition-all hover:duration-300">
               <h1 class="text-indigo-500 font-bold transition-all duration-300">{{ item?.name }}</h1>
               <img :src="item?.image" alt="img" style="width: 60px; height: 100px" />
               <p class="text-sm text-slate-500 font-medium">{{ item?.description }}</p>
-            </a>  
+            </RouterLink>
           </li>
         </ul>
         </div>

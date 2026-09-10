@@ -1,8 +1,4 @@
 /// <reference types="vite/client" />
 
-declare module '*.vue' {
-  import type { DefineComponent } from 'vue'
-  const component: DefineComponent<{}, {}, any>
-  export default component
-}
-
+// Tidak perlu shim `declare module '*.vue'`: vue-tsc membaca tipe asli tiap SFC,
+// sedangkan shim justru menyamarkan props dan emit menjadi tipe generik.

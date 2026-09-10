@@ -1,11 +1,18 @@
 <script lang="ts" setup>
 import { reactive, ref, watchEffect } from 'vue'
-import { RouterLink, useRouter } from 'vue-router'
+import { RouterLink, useRoute, useRouter } from 'vue-router'
 import { EyeIcon, EyeSlashIcon } from '@heroicons/vue/24/outline'
 import { GuestAuth, Login } from '@/services/auth/simple-auth'
 import { ClCloseMd } from '@kalimahapps/vue-icons'
 
 const router = useRouter()
+const route = useRoute()
+
+// Kembalikan pengguna ke halaman yang tadi diminta guard, default ke /profile.
+const goToRedirect = () => {
+  const redirect = route.query.redirect
+  router.push(typeof redirect === 'string' ? redirect : '/profile')
+}
 
 const form = reactive({
   email: '',
@@ -23,21 +30,17 @@ const isShow = (field: keyof typeof show.value) => {
 
 const onLogin = async () => {
   const result = await Login(form)
-  if (result !== "Login berhasil") return form.textAlert = result
-  form.textAlert = result
-  router.push("/profile")
+  form.textAlert = result.message
+
+  if (result.ok) goToRedirect()
 }
 
 const onGuestAuth = async () => {
-  const payload = {
-    email: form.email,
-    password: form.password,
-  }
-
   try {
-    await GuestAuth(payload)
-    form.textAlert = "Login berhasil"
-    router.push("/profile")
+    const result = await GuestAuth({ email: form.email, password: form.password })
+    form.textAlert = result.message
+
+    if (result.ok) goToRedirect()
   } catch (err) {
     form.textAlert = "Login gagal"
     console.error(err)
@@ -69,14 +72,14 @@ watchEffect(() => {
 
 <template>
   <div class="relative">
-    <b-alert v-if="form.textAlert" class="absolute top-5 left-1/2 -translate-x-1/2 z-50 w-fit bg-red-400 text-white rounded-md py-2 px-3 flex flex-row items-center gap-2 hover:scale-105 transition-all duration-300 z-20" >
+    <div v-if="form.textAlert" role="alert" class="absolute top-5 left-1/2 -translate-x-1/2 z-50 w-fit bg-red-400 text-white rounded-md py-2 px-3 flex flex-row items-center gap-2 hover:scale-105 transition-all duration-300">
       {{ form.textAlert }}
       <ClCloseMd @click="form.textAlert = ''" class="cursor-pointer hover:scale-125"/>
-    </b-alert>
+    </div>
   </div>
   <div class="h-screen w-full bg-slate-950 flex flex-col xl:flex-row text-slate-200 selection:bg-indigo-500/30 font-sans">
     <div class="w-full h-full flex flex-col justify-center items-center hidden xl:block">
-      <img src="../assets/login.jpg" alt="login" class="w-full h-full object-cover"/>
+      <img src="../assets/login.webp" alt="login" class="w-full h-full object-cover"/>
     </div>
     <div class="w-full h-full flex flex-col justify-center items-center bg-blue-300">
       <div class="w-[60%] flex flex-col gap-3 p-3">
@@ -104,15 +107,15 @@ watchEffect(() => {
               <EyeSlashIcon v-else class="w-5 h-5 text-black"/>
             </span>
           </div>
-          <Button
+          <button
             type="submit"
             class="w-full bg-blue-500 rounded-md p-3 text-white hover:bg-blue-400 mt-3 hover:scale-105 font-bold"
           >
             Login
-          </Button>
-          <Button @click="onGuestAuth" class="w-full border border-blue-500 bg-white font-bold rounded-md p-3 text-blue-500 hover:bg-blue-500 hover:text-white hover:scale-105">
+          </button>
+          <button type="button" @click="onGuestAuth" class="w-full border border-blue-500 bg-white font-bold rounded-md p-3 text-blue-500 hover:bg-blue-500 hover:text-white hover:scale-105">
             Login as Guest
-          </Button>
+          </button>
         </form>
         <div class="flex flex-row justify-center gap-1">
           <h5 class="text-center font-medium text-white text-xs md:text-base">Don't have an account?</h5>
@@ -123,7 +126,7 @@ watchEffect(() => {
         <div class="flex flex-row justify-center gap-4 cursor-pointer">
           <div class="cursor-pointer" @click="useGoogleLogin()">
             <img
-              src="../assets/google.png"
+              src="../assets/google.webp"
               alt="google"
               width="25px"
               height="25px"
@@ -132,7 +135,7 @@ watchEffect(() => {
           </div>
           <div class="cursor-pointer" @click="useFacebookLogin()">
             <img
-              src="../assets/facebook.png"
+              src="../assets/facebook.webp"
               alt="facebook"
               width="25px"
               height="25px"
@@ -141,7 +144,7 @@ watchEffect(() => {
           </div>
           <div class="cursor-pointer" @click="useAppleLogin()">
             <img
-              src="../assets/apple.png"
+              src="../assets/apple.webp"
               alt="apple"
               width="20px"
               height="20px"

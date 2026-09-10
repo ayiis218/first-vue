@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import MainView from '../views/MainView.vue'
-import AboutView from '../views/AboutView.vue'
 import AnimeView from '../views/AnimeView.vue'
 import OtpView from '../views/OtpView.vue'
 import ProfileView from '../views/ProfileView.vue'
@@ -8,8 +7,9 @@ import LoginView from '@/views/LoginView.vue'
 import RegisterView from '@/views/RegisterView.vue'
 import MainLayout from '@/layouts/MainLayout.vue'
 import AuthLayout from '@/layouts/AuthLayout.vue'
-import NotFoundView from '@/views/404.vue'
+import NotFoundView from '@/views/NotFoundView.vue'
 import DetailView from '@/views/DetailView.vue'
+import { isAuthenticated } from '@/stores/session'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -22,11 +22,12 @@ const router = createRouter({
     {
       path: '/auth',
       component: MainLayout,
+      redirect: '/profile',
+      meta: { requiresAuth: true },
       children: [
         { path: '/profile', name: 'profile', component: ProfileView },
-        { path: '/about', name: 'about', component: AboutView },
         { path: '/anime', name: 'anime', component: AnimeView },
-        { path: '/anime/:name', name: 'detail-anime', component: DetailView },
+        { path: '/anime/:id', name: 'detail-anime', component: DetailView },
         { path: '/otp', name: 'otp', component: OtpView },
       ],
     },
@@ -41,6 +42,12 @@ const router = createRouter({
     },
     { path: '/:pathMatch(.*)*', redirect: '/404' },
   ],
+})
+
+router.beforeEach((to) => {
+  if (to.meta.requiresAuth && !isAuthenticated()) {
+    return { name: 'login', query: { redirect: to.fullPath } }
+  }
 })
 
 export default router

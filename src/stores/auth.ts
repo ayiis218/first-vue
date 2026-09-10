@@ -1,10 +1,11 @@
 import Cookies from "js-cookie";
-import { computed, ref, watch } from 'vue'
+import { computed, ref, watch, type Ref } from 'vue'
 
+// Catatan: HttpOnly tidak bisa disetel dari JavaScript, jadi opsi itu tidak dipakai.
+// `secure` hanya diaktifkan di https agar cookie tetap tersimpan saat development di http.
 const config = {
   sameSite: "strict" as const,
-  secure: true,
-  httpOnly: true,
+  secure: window.location.protocol === "https:",
 }
 
 export const useCookiesStore = () => {
@@ -27,8 +28,16 @@ export const useCookiesStore = () => {
   }
 }
 
-export function useLocalStorage<T>(key: string, defaultValue: T | null = null) {
-  const state = ref<T | null>(defaultValue)
+// Satu ref per kunci, dipakai bersama semua komponen. Tanpa ini setiap pemanggil
+// mendapat ref sendiri, sehingga perubahan di satu komponen tidak terlihat di
+// komponen lain dan tiap pemanggilan menambah listener 'storage' yang tak pernah dilepas.
+const stores = new Map<string, Ref<unknown>>()
+
+export function useLocalStorage<T>(key: string, defaultValue: T | null = null): Ref<T | null> {
+  const existing = stores.get(key)
+  if (existing) return existing as Ref<T | null>
+
+  const state = ref<T | null>(defaultValue) as Ref<T | null>
 
   const stored = localStorage.getItem(key)
   if (stored) {
@@ -50,24 +59,31 @@ export function useLocalStorage<T>(key: string, defaultValue: T | null = null) {
   )
 
   window.addEventListener('storage', (event) => {
-    if (event.key === key) {
+    if (event.key !== key) return
+
+    try {
       state.value = event.newValue ? JSON.parse(event.newValue) : null
+    } catch {
+      state.value = null
     }
   })
 
+  stores.set(key, state)
   return state
 }
 
-interface ISession {
+export interface ISession {
   name: string
   email: string
   token: string
 }
 
-interface IRegister {
+// Password tidak pernah disimpan apa adanya, hanya salt dan hash-nya.
+export interface IStoredCredential {
   username: string
   email: string
-  password: string
+  salt: string
+  passwordHash: string
 }
 
 export function useAuth() {
@@ -90,9 +106,9 @@ export function useAuth() {
 }
 
 export function useRegister() {
-  const akun = useLocalStorage<IRegister>("register", null)
+  const akun = useLocalStorage<IStoredCredential>("register", null)
 
-  const register = (data: IRegister) => {
+  const register = (data: IStoredCredential) => {
     akun.value = data
   }
 
